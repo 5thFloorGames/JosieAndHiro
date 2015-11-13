@@ -10,10 +10,12 @@ public class PlayerControllerScript : MonoBehaviour {
 	private float rotSpeed = 2.0f;
 	private int frameCounter = 0;
 	private Vector3 target;
+	private Light lightSource;
 
 	// Use this for initialization
 	void Start () {
-		rigid = gameObject.GetComponent<Rigidbody> ();
+		rigid = GetComponent<Rigidbody> ();
+		lightSource = GetComponentInChildren<Light> ();
 	}
 	
 	// Update is called once per frame
@@ -25,6 +27,10 @@ public class PlayerControllerScript : MonoBehaviour {
 				Rotate (-3.0f);
 			}
 		}
+		if (Input.GetButtonDown ("Light")) {
+			StartCoroutine("TurnOffAfterThree");
+		}
+
 		if (rotating) {
 			transform.Rotate (0, rotSpeed, 0);
 			frameCounter++;
@@ -62,6 +68,11 @@ public class PlayerControllerScript : MonoBehaviour {
 		}
 	}
 
+	IEnumerator TurnOffAfterThree() {
+		lightSource.enabled = true;
+		yield return new WaitForSeconds(1);
+		lightSource.enabled = false;
+	}
 
 	void Rotate(float speed) {
 		rotating = true;
