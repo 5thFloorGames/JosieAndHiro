@@ -16,13 +16,17 @@ public class WinTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		playersInTrigger++;
-		if(playersInTrigger == 2){
-			print ("game won!");
+		if (other.tag == "Hiro" || other.tag == "Josie") {
+			playersInTrigger++;
+			if(playersInTrigger == 2){
+				print ("game won!");
+			}
 		}
 	}
 
 	void OnTriggerExit(Collider other){
-		playersInTrigger--;
+		if (other.tag == "Hiro" || other.tag == "Josie") {
+			playersInTrigger--;
+		}
 	}
 }
