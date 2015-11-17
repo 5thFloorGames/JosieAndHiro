@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerControllerScript : MonoBehaviour {
+public class HiroController : MonoBehaviour {
 	private float speed = 2.0f;
 	private bool rotating = false;
 	private bool moving = false;
@@ -76,5 +76,10 @@ public class PlayerControllerScript : MonoBehaviour {
 	void setTarget(Vector3 transform){
 		target = transform;
 		moving = true;
+	}
+
+	public void reset(){
+		rotating = false;
+		 moving = false;
 	}
 }
