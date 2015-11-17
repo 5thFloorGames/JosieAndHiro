@@ -25,17 +25,25 @@ public class DropTheFloor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (drop == State.Down) {
-			Vector3 target = transform.position + Vector3.down;
+			Vector3 target = new Vector3(transform.position.x, -10f, transform.position.z);
 			transform.position = Vector3.MoveTowards (transform.position, target, 10f * Time.deltaTime);
 			foreach(GameObject g in droppables[dropIndex]){
-				target = g.transform.position + Vector3.down;
+				target = new Vector3(g.transform.position.x, -14.49f, g.transform.position.z);
 				g.transform.position = Vector3.MoveTowards (g.transform.position, target, 10f * Time.deltaTime);
 			}
 		} else if (drop == State.Up) {
-			transform.position = Vector3.MoveTowards (transform.position, originalPosition, 10f * Time.deltaTime);
+			if(transform.position.y < 0) {
+				transform.position = Vector3.MoveTowards (transform.position, originalPosition, 10f * Time.deltaTime);
+			} else {
+				transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+			}
 			foreach(GameObject g in droppables[dropIndex]){
-				Vector3 target = g.transform.position + Vector3.up;
-				g.transform.position = Vector3.MoveTowards (g.transform.position, target, 10f * Time.deltaTime);
+				Vector3 target = new Vector3(g.transform.position.x, -4.49f, g.transform.position.z);
+				if(g.transform.position.y < -4.49) {
+					g.transform.position = Vector3.MoveTowards (g.transform.position, target, 10f * Time.deltaTime);
+				} else {
+					g.transform.position = new Vector3(g.transform.position.x, -4.49f, g.transform.position.z);
+				}
 				// Fix so it goes back to their original positions
 			}
 		}
