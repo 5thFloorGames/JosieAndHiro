@@ -53,13 +53,6 @@ public class HiroController : MonoBehaviour {
 			if (Input.GetAxis ("HiroHorizontal") > 0) {
 				setTarget(transform.position + transform.forward * (-1));
 			}
-			if (Input.GetAxis ("HiroVertical") < 0) {
-				setTarget(transform.position + transform.right * (-1));
-			}
-			if (Input.GetAxis ("HiroVertical") > 0) {
-				setTarget(transform.position + transform.right);
-
-			}
 		}
 	}
 
