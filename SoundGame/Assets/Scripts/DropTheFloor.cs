@@ -89,13 +89,13 @@ public class DropTheFloor : MonoBehaviour {
 		while (true) {
 			dropIndex = Random.Range(0,maxBlocks);
 			sound.PlayOneShot(clips[dropIndex]);
-			yield return new WaitForSeconds (5);
+			yield return new WaitForSeconds (6);
 			drop = State.Down;
 			yield return new WaitForSeconds (3);
 			drop = State.Up;
 			yield return new WaitForSeconds (3);
 			drop = State.Inactive;
-			yield return new WaitForSeconds (Random.Range(2,7));
+			yield return new WaitForSeconds (Random.Range(2,6));
 		}
 	}
 }
