@@ -46,15 +46,35 @@ public class HiroController : MonoBehaviour {
 				moving = false;
 			}
 		}
+
 		if (!rotating && !moving) {
 			// Raycast to check for walls.
 			if (Input.GetAxis ("HiroHorizontal") < 0) {
-				setTarget(transform.position + transform.forward);
+				if(CheckForWall(transform.forward)){
+					// play a sound and move forward and back a bit maybe.
+				} else {
+					setTarget(transform.position + transform.forward);
+				}
 			}
 			if (Input.GetAxis ("HiroHorizontal") > 0) {
-				setTarget(transform.position + transform.forward * (-1));
+				if(CheckForWall(transform.forward * (-1))){
+					// play a sound and move forward and back a bit maybe.
+				} else {
+					setTarget(transform.position + transform.forward * (-1));
+				}
 			}
 		}
+	}
+
+	private bool CheckForWall (Vector3 direction){
+		Debug.DrawRay(transform.position, direction, Color.green, 4.0f);
+		RaycastHit[] hits = Physics.RaycastAll(transform.position, direction, 1.25f);
+		foreach (RaycastHit hit in hits){
+			if(hit.transform.tag == "Wall"){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	IEnumerator TurnOffAfterSecond() {
