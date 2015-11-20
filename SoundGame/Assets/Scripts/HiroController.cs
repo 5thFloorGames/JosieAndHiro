@@ -19,11 +19,11 @@ public class HiroController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!rotating && !moving) {
-			if (Input.GetButton ("Rotate")) {
+			if (Input.GetButtonDown ("Rotate")) {
 				rotation += 90f;
 				qTo = Quaternion.Euler(0.0f, rotation, 0.0f);
 				Rotate (rotSpeed);
-			} else if (Input.GetButton ("AntiRotate")) {
+			} else if (Input.GetButtonDown ("AntiRotate")) {
 				rotation -= 90f;
 				qTo = Quaternion.Euler(0.0f, rotation, 0.0f);
 				Rotate (-rotSpeed);
@@ -47,6 +47,7 @@ public class HiroController : MonoBehaviour {
 			}
 		}
 		if (!rotating && !moving) {
+			// Raycast to check for walls.
 			if (Input.GetAxis ("HiroHorizontal") < 0) {
 				setTarget(transform.position + transform.forward);
 			}
