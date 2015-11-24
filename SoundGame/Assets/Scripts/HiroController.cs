@@ -41,7 +41,7 @@ public class HiroController : MonoBehaviour {
 				rotation -= 90f;
 				qTo = Quaternion.Euler(0.0f, rotation, 0.0f);
 				Rotate (-rotSpeed);
-				PlayRandomSound(turnRight);
+				PlayRandomSound(turnLeft);
 			}
 		}
 		if (Input.GetButtonDown ("Light")) {
