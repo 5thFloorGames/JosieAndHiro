@@ -15,7 +15,12 @@ public class DropTheFloor : MonoBehaviour {
 	[SerializeField]
 	private AudioClip countDown;
 	[SerializeField]
+	private AudioClip floorsDown;
+	[SerializeField]
+	private AudioClip floorsUp;
+	[SerializeField]
 	private AudioClip[] clips;
+	public float moverate = 10f;
 	
 	// Use this for initialization
 	void Start () {
@@ -40,11 +45,11 @@ public class DropTheFloor : MonoBehaviour {
 	void Update () {
 		if (drop == State.Down) {
 			Vector3 target = new Vector3(transform.position.x, -10f, transform.position.z);
-			transform.position = Vector3.MoveTowards (transform.position, target, 10f * Time.deltaTime);
+			transform.position = Vector3.MoveTowards (transform.position, target, moverate * Time.deltaTime);
 			dropAllButThis();
 		} else if (drop == State.Up) {
 			if(transform.position.y < 0) {
-				transform.position = Vector3.MoveTowards (transform.position, originalPosition, 10f * Time.deltaTime);
+				transform.position = Vector3.MoveTowards (transform.position, originalPosition, moverate * Time.deltaTime);
 			} else {
 				transform.position = new Vector3(transform.position.x, 0, transform.position.z);
 			}
@@ -71,7 +76,7 @@ public class DropTheFloor : MonoBehaviour {
 	private void dropBlocksAtIndex(int index){
 		foreach(GameObject g in droppables[index]){
 			Vector3 target = new Vector3(g.transform.position.x, -14.49f, g.transform.position.z);
-			g.transform.position = Vector3.MoveTowards (g.transform.position, target, 10f * Time.deltaTime);
+			g.transform.position = Vector3.MoveTowards (g.transform.position, target, moverate * Time.deltaTime);
 		}
 	}
 
@@ -79,7 +84,7 @@ public class DropTheFloor : MonoBehaviour {
 		foreach(GameObject g in droppables[index]){
 			Vector3 target = new Vector3(g.transform.position.x, -4.49f, g.transform.position.z);
 			if(g.transform.position.y < -4.49) {
-				g.transform.position = Vector3.MoveTowards (g.transform.position, target, 10f * Time.deltaTime);
+				g.transform.position = Vector3.MoveTowards (g.transform.position, target, moverate * Time.deltaTime);
 			} else {
 				g.transform.position = new Vector3(g.transform.position.x, -4.49f, g.transform.position.z);
 			}
@@ -95,7 +100,9 @@ public class DropTheFloor : MonoBehaviour {
 			sound.PlayOneShot(countDown,0.2f);
 			yield return new WaitForSeconds (6);
 			drop = State.Down;
+			sound.PlayOneShot(floorsDown);
 			yield return new WaitForSeconds (3);
+			sound.PlayOneShot(floorsUp);
 			drop = State.Up;
 			yield return new WaitForSeconds (3);
 			drop = State.Inactive;
