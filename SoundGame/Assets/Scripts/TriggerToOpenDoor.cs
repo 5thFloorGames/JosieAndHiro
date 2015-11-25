@@ -5,8 +5,8 @@ public class TriggerToOpenDoor : MonoBehaviour {
 
 	public DoorOpen door;
 	private int playersInTrigger = 0;
-	private AudioClip success;
 	private AudioSource sound;
+	public AudioSource[] enablable;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +22,7 @@ public class TriggerToOpenDoor : MonoBehaviour {
 		if (other.tag == "Hiro" || other.tag == "Josie") {
 			playersInTrigger++;
 			if(playersInTrigger == 2){
-				sound.PlayOneShot(success);
-				door.Open();
+				StartCoroutine("Activate");
 			}
 		}
 	}
@@ -32,5 +31,18 @@ public class TriggerToOpenDoor : MonoBehaviour {
 		if (other.tag == "Hiro" || other.tag == "Josie") {
 			playersInTrigger--;
 		}
+	}
+
+	void Enable(){
+		foreach (AudioSource a in enablable) {
+			a.enabled = true;
+		}
+	}
+
+	IEnumerator Activate(){
+		yield return new WaitForSeconds (0.2f);
+		door.Open();
+		yield return new WaitForSeconds (0.5f);
+		Enable();
 	}
 }

@@ -23,12 +23,7 @@ public class DoorOpen: MonoBehaviour {
 	}
 
 	public void Open(){
-		StartCoroutine ("WaitAndOpen");
-	}
-
-	IEnumerator WaitAndOpen(){
-		yield return new WaitForSeconds (0.2f);
 		opening = true;
-		sound.PlayOneShot (sound.clip);
+		sound.PlayOneShot (sound.clip);	
 	}
 }
