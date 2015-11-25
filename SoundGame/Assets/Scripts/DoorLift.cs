@@ -4,10 +4,11 @@ using System.Collections;
 public class DoorLift : MonoBehaviour {
 
 	private bool opening = false;
+	private AudioSource sound;
 
 	// Use this for initialization
 	void Start () {
-	
+		sound = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -23,5 +24,6 @@ public class DoorLift : MonoBehaviour {
 
 	public void Open(){
 		opening = true;
+		sound.PlayOneShot (sound.clip);
 	}
 }
