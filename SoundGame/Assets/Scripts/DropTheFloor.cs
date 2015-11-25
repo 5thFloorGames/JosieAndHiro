@@ -13,6 +13,8 @@ public class DropTheFloor : MonoBehaviour {
 	private List<GameObject[]> droppables;
 	private AudioSource sound;
 	[SerializeField]
+	private AudioClip countDown;
+	[SerializeField]
 	private AudioClip[] clips;
 	
 	// Use this for initialization
@@ -89,6 +91,8 @@ public class DropTheFloor : MonoBehaviour {
 		while (true) {
 			dropIndex = Random.Range(0,maxBlocks);
 			sound.PlayOneShot(clips[dropIndex]);
+			yield return new WaitForSeconds (0.5f);
+			sound.PlayOneShot(countDown,0.2f);
 			yield return new WaitForSeconds (6);
 			drop = State.Down;
 			yield return new WaitForSeconds (3);
