@@ -5,6 +5,7 @@ public class HiroController : MonoBehaviour {
 	private float speed = 2.0f;
 	private bool rotating = false;
 	private bool moving = false;
+	private bool falling = false;
 	private float rotSpeed = 125.0f;
 	private Vector3 target;
 	private Light lightSource;
@@ -17,16 +18,27 @@ public class HiroController : MonoBehaviour {
 	public AudioClip[] turnRight;
 	public AudioClip[] turnLeft;
 	public AudioClip[] bumps;
+	public AudioClip[] fallingSounds;
+	public AudioClip[] spawn;
 
 	// Use this for initialization
 	void Start () {
 		lightSource = GetComponentInChildren<Light> ();
 		sound = GetComponentInChildren<AudioSource> ();
 		wallMask |= 1 << LayerMask.NameToLayer ("Wall");
+		SpawnSound ();
 	}
 
 	private void PlayRandomSound(AudioClip[] clips){
-		sound.PlayOneShot (clips[Random.Range(0,clips.Length)]);
+		PlayRandomSound(clips,0.4f);
+	}
+
+	private void PlayRandomSound(AudioClip[] clips, float volume){
+		sound.PlayOneShot (clips[Random.Range(0,clips.Length)], volume);
+	}
+
+	public void SpawnSound(){
+		PlayRandomSound (spawn, 1f);
 	}
 	
 	// Update is called once per frame
@@ -46,6 +58,15 @@ public class HiroController : MonoBehaviour {
 		}
 		if (Input.GetButtonDown ("Light")) {
 			StartCoroutine("TurnOffAfterSecond");
+		}
+
+		if (transform.position.y < 0.5 && !falling) {
+			falling = true;
+			PlayRandomSound(fallingSounds, 0.8f);
+		}
+
+		if (transform.position.y > 0.5 == falling) {
+			falling = false;
 		}
 
 		if (rotating) {

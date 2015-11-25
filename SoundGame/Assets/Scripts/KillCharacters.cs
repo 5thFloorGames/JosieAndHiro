@@ -20,6 +20,7 @@ public class KillCharacters : MonoBehaviour {
 		if (other.tag == "Hiro") {
 			other.GetComponent<HiroController>().reset();
 			other.transform.position = HiroSpawn.position; 
+			other.SendMessage("SpawnSound");
 		} else if (other.tag == "Josie") {
 			other.transform.position = JosieSpawn.position;
 		}
