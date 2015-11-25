@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OpenDoor : MonoBehaviour {
+public class TriggerToOpenDoor : MonoBehaviour {
 
-	public DoorLift door;
+	public DoorOpen door;
 	private int playersInTrigger = 0;
 	private AudioClip success;
 	private AudioSource sound;

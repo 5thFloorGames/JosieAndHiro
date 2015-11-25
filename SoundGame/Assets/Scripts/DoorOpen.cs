@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DoorLift : MonoBehaviour {
+public class DoorOpen: MonoBehaviour {
 
 	private bool opening = false;
 	private AudioSource sound;
@@ -23,6 +23,11 @@ public class DoorLift : MonoBehaviour {
 	}
 
 	public void Open(){
+		StartCoroutine ("WaitAndOpen");
+	}
+
+	IEnumerator WaitAndOpen(){
+		yield return new WaitForSeconds (0.2f);
 		opening = true;
 		sound.PlayOneShot (sound.clip);
 	}
