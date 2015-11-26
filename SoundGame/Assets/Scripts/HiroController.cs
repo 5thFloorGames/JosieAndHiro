@@ -87,6 +87,8 @@ public class HiroController : MonoBehaviour {
 			// Raycast to check for walls.
 			if (Input.GetAxis ("HiroHorizontal") < 0) {
 				if(Physics.Raycast (transform.position, transform.forward, 1.25f, wallMask)){
+					// make this play only once
+
 					PlayRandomSound(bumps);
 				} else {
 					setTarget(transform.position + transform.forward);
@@ -95,6 +97,8 @@ public class HiroController : MonoBehaviour {
 			}
 			if (Input.GetAxis ("HiroHorizontal") > 0) {
 				if(Physics.Raycast (transform.position, transform.forward * (-1), 1.25f, wallMask)){
+					// make this play only once
+
 					PlayRandomSound(bumps);
 				} else {
 					setTarget(transform.position + transform.forward * (-1));

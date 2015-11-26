@@ -106,7 +106,7 @@ public class DropTheFloor : MonoBehaviour {
 			drop = State.Up;
 			yield return new WaitForSeconds (3);
 			drop = State.Inactive;
-			yield return new WaitForSeconds (Random.Range(2,4));
+			yield return new WaitForSeconds (Random.Range(1,3));
 		}
 	}
 }

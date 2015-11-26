@@ -17,6 +17,11 @@ public class ClickOnTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
+		StartCoroutine ("Click");
+	}
+
+	IEnumerator Click(){
+		yield return new WaitForSeconds (0.7f);
 		sound.PlayOneShot (click, 1f);
 	}
 	
