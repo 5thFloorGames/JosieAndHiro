@@ -24,7 +24,7 @@ public class DoorOpen: MonoBehaviour {
 				opening = false;
 				open = true;
 				if(doorFriend != null){
-					if(doorFriend.open){
+					if(doorFriend.open && !closing){
 						StuckOpen();
 						doorFriend.StuckOpen();
 					}
@@ -43,7 +43,9 @@ public class DoorOpen: MonoBehaviour {
 
 	public void Open(){
 		opening = true;
-		sound.PlayOneShot (sound.clip);	
+		if (!stuck) {
+			sound.PlayOneShot (sound.clip);	
+		}
 	}
 
 	public void StuckOpen(){
