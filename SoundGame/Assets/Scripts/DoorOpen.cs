@@ -42,10 +42,8 @@ public class DoorOpen: MonoBehaviour {
 	}
 
 	public void Open(){
-		if (!stuck) {
-			opening = true;
-			sound.PlayOneShot (sound.clip);	
-		}
+		opening = true;
+		sound.PlayOneShot (sound.clip);	
 	}
 
 	public void StuckOpen(){
