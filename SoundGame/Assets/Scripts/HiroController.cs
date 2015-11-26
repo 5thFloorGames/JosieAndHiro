@@ -87,9 +87,7 @@ public class HiroController : MonoBehaviour {
 			// Raycast to check for walls.
 			if (Input.GetAxis ("HiroHorizontal") < 0) {
 				if(Physics.Raycast (transform.position, transform.forward, 1.25f, wallMask)){
-					// make this play only once
-
-					PlayRandomSound(bumps);
+					PlayBump();
 				} else {
 					setTarget(transform.position + transform.forward);
 					PlayRandomSound(forwardJumps);
@@ -98,13 +96,19 @@ public class HiroController : MonoBehaviour {
 			if (Input.GetAxis ("HiroHorizontal") > 0) {
 				if(Physics.Raycast (transform.position, transform.forward * (-1), 1.25f, wallMask)){
 					// make this play only once
-
-					PlayRandomSound(bumps);
+					PlayBump();
 				} else {
 					setTarget(transform.position + transform.forward * (-1));
 					PlayRandomSound(backwardJumps);
 				}
 			}
+		}
+	}
+
+	void PlayBump(){
+		if (!sound.isPlaying) {
+			sound.clip = bumps[Random.Range(0,bumps.Length)];
+			sound.Play();
 		}
 	}
 
