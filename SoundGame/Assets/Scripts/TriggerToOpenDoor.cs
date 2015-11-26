@@ -41,8 +41,8 @@ public class TriggerToOpenDoor : MonoBehaviour {
 	}
 
 	void Disable(){
-		foreach (AudioSource a in enablable) {
-			a.enabled = true;
+		foreach (AudioSource a in disablable) {
+			a.enabled = false;
 		}
 	}
 	
@@ -51,5 +51,6 @@ public class TriggerToOpenDoor : MonoBehaviour {
 		door.Open();
 		yield return new WaitForSeconds (0.5f);
 		Enable();
+		Disable();
 	}
 }
