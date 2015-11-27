@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: e66743981a2af4c62a25f563a6f92214
+timeCreated: 1448616495
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Back
+    100002: Bunny_Armature
+    100004: Bunny_Back_Joint_L
+    100006: Bunny_Back_Joint_R
+    100008: Bunny_Back_LowerLeg_L
+    100010: Bunny_Back_LowerLeg_R
+    100012: Bunny_Back_UpperLeg_L
+    100014: Bunny_Back_UpperLeg_R
+    100016: Bunny_Body
+    100018: Bunny_Ear_L
+    100020: Bunny_Ear_R
+    100022: Bunny_Front_LowerLeg_L
+    100024: Bunny_Front_LowerLeg_R
+    100026: Bunny_Front_UpperLeg_L
+    100028: Bunny_Front_UpperLeg_R
+    100030: Bunny_Head
+    100032: Camera
+    100034: Ear_Lower_L
+    100036: Ear_Lower_R
+    100038: Ear_Upper_L
+    100040: Ear_Upper_R
+    100042: Face
+    100044: Foot_L
+    100046: Foot_Lower_L
+    100048: Foot_Lower_R
+    100050: Foot_R
+    100052: Foot_Upper_L
+    100054: Foot_Upper_R
+    100056: Head
+    100058: Joint_L
+    100060: Joint_R
+    100062: Lower_Leg_L
+    100064: Lower_Leg_R
+    100066: Pivot
+    100068: //RootNode
+    100070: Shin_L
+    100072: Shin_R
+    100074: Svetlo_1
+    100076: Svetlo_2
+    100078: Thigh_L
+    100080: Thigh_R
+    100082: Upper_Leg_L
+    100084: Upper_Leg_R
+    400000: Back
+    400002: Bunny_Armature
+    400004: Bunny_Back_Joint_L
+    400006: Bunny_Back_Joint_R
+    400008: Bunny_Back_LowerLeg_L
+    400010: Bunny_Back_LowerLeg_R
+    400012: Bunny_Back_UpperLeg_L
+    400014: Bunny_Back_UpperLeg_R
+    400016: Bunny_Body
+    400018: Bunny_Ear_L
+    400020: Bunny_Ear_R
+    400022: Bunny_Front_LowerLeg_L
+    400024: Bunny_Front_LowerLeg_R
+    400026: Bunny_Front_UpperLeg_L
+    400028: Bunny_Front_UpperLeg_R
+    400030: Bunny_Head
+    400032: Camera
+    400034: Ear_Lower_L
+    400036: Ear_Lower_R
+    400038: Ear_Upper_L
+    400040: Ear_Upper_R
+    400042: Face
+    400044: Foot_L
+    400046: Foot_Lower_L
+    400048: Foot_Lower_R
+    400050: Foot_R
+    400052: Foot_Upper_L
+    400054: Foot_Upper_R
+    400056: Head
+    400058: Joint_L
+    400060: Joint_R
+    400062: Lower_Leg_L
+    400064: Lower_Leg_R
+    400066: Pivot
+    400068: //RootNode
+    400070: Shin_L
+    400072: Shin_R
+    400074: Svetlo_1
+    400076: Svetlo_2
+    400078: Thigh_L
+    400080: Thigh_R
+    400082: Upper_Leg_L
+    400084: Upper_Leg_R
+    4300000: Bunny_Ear_L
+    4300002: Bunny_Head
+    4300004: Bunny_Front_LowerLeg_L
+    4300006: Bunny_Front_UpperLeg_L
+    4300008: Bunny_Back_LowerLeg_L
+    4300010: Bunny_Back_Joint_L
+    4300012: Bunny_Back_UpperLeg_L
+    4300014: Bunny_Ear_R
+    4300016: Bunny_Front_LowerLeg_R
+    4300018: Bunny_Front_UpperLeg_R
+    4300020: Bunny_Body
+    4300022: Bunny_Back_UpperLeg_R
+    4300024: Bunny_Back_Joint_R
+    4300026: Bunny_Back_LowerLeg_R
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Bunny_Back_Joint_L
+    13700002: Bunny_Back_Joint_R
+    13700004: Bunny_Back_LowerLeg_L
+    13700006: Bunny_Back_LowerLeg_R
+    13700008: Bunny_Back_UpperLeg_L
+    13700010: Bunny_Back_UpperLeg_R
+    13700012: Bunny_Body
+    13700014: Bunny_Ear_L
+    13700016: Bunny_Ear_R
+    13700018: Bunny_Front_LowerLeg_L
+    13700020: Bunny_Front_LowerLeg_R
+    13700022: Bunny_Front_UpperLeg_L
+    13700024: Bunny_Front_UpperLeg_R
+    13700026: Bunny_Head
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
