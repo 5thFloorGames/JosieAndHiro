@@ -4,6 +4,7 @@ using System.Collections;
 public class ToggleDoor : MonoBehaviour {
 
 	public DoorOpen door;
+	private bool occupied = false;
 
 	// Use this for initialization
 	void Start () {
@@ -16,16 +17,16 @@ public class ToggleDoor : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.tag == "Hiro" || other.tag == "Josie") {
+		if (other.tag == "Hiro" || other.tag == "Josie" && !occupied) {
 			door.Open();
+			occupied = true;
 		}
-		print ("entering");
 	}
 	
 	void OnTriggerExit(Collider other){
-		if (other.tag == "Hiro" || other.tag == "Josie") {
+		if (other.tag == "Hiro" || other.tag == "Josie" && !occupied) {
 			door.Close();
+			occupied = false;
 		}
-		print ("leaving");
 	}	
 }
