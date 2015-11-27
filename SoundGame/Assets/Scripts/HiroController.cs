@@ -23,7 +23,7 @@ public class HiroController : MonoBehaviour {
 	private AudioClip click;
 
 	void Awake(){
-		lightSource = GetComponentInChildren<Light> ();
+		//lightSource = GetComponentInChildren<Light> ();
 		sound = GetComponentInChildren<AudioSource> ();
 		forwardJumps = Resources.LoadAll<AudioClip>("Audio/Hiro/Forward");
 		backwardJumps = Resources.LoadAll<AudioClip>("Audio/Hiro/Backward");
@@ -73,7 +73,7 @@ public class HiroController : MonoBehaviour {
 			}
 		}
 		if (Input.GetButtonDown ("Light")) {
-			StartCoroutine("TurnOffAfterSecond");
+			//StartCoroutine("TurnOffAfterSecond");
 		}
 
 		if (transform.position.y < 0.5 && !falling) {
