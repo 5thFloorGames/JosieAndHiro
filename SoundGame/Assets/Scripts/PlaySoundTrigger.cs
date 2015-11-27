@@ -16,6 +16,10 @@ public class PlaySoundTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		sound.PlayOneShot(sound.clip);
+		if (other.tag == "Hiro") {
+			other.SendMessage ("Click");
+		} else {
+			sound.PlayOneShot(sound.clip);
+		}
 	}
 }

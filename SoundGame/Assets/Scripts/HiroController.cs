@@ -13,18 +13,30 @@ public class HiroController : MonoBehaviour {
 	private float rotation = 0.0f;
 	private Quaternion qTo = Quaternion.identity;
 	private int wallMask = 0;
-	public AudioClip[] forwardJumps;
-	public AudioClip[] backwardJumps;
-	public AudioClip[] turnRight;
-	public AudioClip[] turnLeft;
-	public AudioClip[] bumps;
-	public AudioClip[] fallingSounds;
-	public AudioClip[] spawn;
+	private AudioClip[] forwardJumps;
+	private AudioClip[] backwardJumps;
+	private AudioClip[] turnRight;
+	private AudioClip[] turnLeft;
+	private AudioClip[] bumps;
+	private AudioClip[] fallingSounds;
+	private AudioClip spawn;
+	private AudioClip click;
+
+	void Awake(){
+		//lightSource = GetComponentInChildren<Light> ();
+		sound = GetComponentInChildren<AudioSource> ();
+		forwardJumps = Resources.LoadAll<AudioClip>("Audio/Hiro/Forward");
+		backwardJumps = Resources.LoadAll<AudioClip>("Audio/Hiro/Backward");
+		turnRight = Resources.LoadAll<AudioClip>("Audio/Hiro/TurnRight");
+		turnLeft = Resources.LoadAll<AudioClip>("Audio/Hiro/TurnLeft");
+		bumps = Resources.LoadAll<AudioClip>("Audio/Hiro/Bump");
+		fallingSounds = Resources.LoadAll<AudioClip>("Audio/Hiro/Falling");
+		spawn = Resources.Load<AudioClip>("Audio/Actions/start");
+		click = Resources.Load<AudioClip>("Audio/Actions/Click");
+	}
 
 	// Use this for initialization
 	void Start () {
-		lightSource = GetComponentInChildren<Light> ();
-		sound = GetComponentInChildren<AudioSource> ();
 		wallMask |= 1 << LayerMask.NameToLayer ("Wall");
 		SpawnSound ();
 	}
@@ -38,7 +50,11 @@ public class HiroController : MonoBehaviour {
 	}
 
 	public void SpawnSound(){
-		PlayRandomSound (spawn, 1f);
+		sound.PlayOneShot (spawn, 0.5f);
+	}
+
+	public void Click(){
+		sound.PlayOneShot (click, 0.5f);
 	}
 	
 	// Update is called once per frame
@@ -57,7 +73,7 @@ public class HiroController : MonoBehaviour {
 			}
 		}
 		if (Input.GetButtonDown ("Light")) {
-			StartCoroutine("TurnOffAfterSecond");
+			//StartCoroutine("TurnOffAfterSecond");
 		}
 
 		if (transform.position.y < 0.5 && !falling) {
