@@ -16,6 +16,7 @@ public class PlaySoundTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
+
 		sound.PlayOneShot(sound.clip);
 	}
 }
