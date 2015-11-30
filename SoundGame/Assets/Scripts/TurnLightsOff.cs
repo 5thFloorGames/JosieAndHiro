@@ -4,7 +4,7 @@ using System.Collections;
 public class TurnLightsOff : MonoBehaviour {
 
 	[SerializeField]
-	private Light lightSource;
+	private Light[] lightSources;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +17,15 @@ public class TurnLightsOff : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		lightSource.enabled = false;
+		float wait = 0f;
+		foreach (Light lightSource in lightSources) {
+			StartCoroutine(TurnOff(lightSource, wait));
+			wait += 0.3f;
+		}
+	}
+
+	IEnumerator TurnOff(Light source, float wait){
+		yield return new WaitForSeconds (wait);
+		source.enabled = false;
 	}
 }
