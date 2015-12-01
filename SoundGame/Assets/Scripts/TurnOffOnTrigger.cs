@@ -13,7 +13,9 @@ public class TurnOffOnTrigger : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(){
-		this.gameObject.SetActive (false);
+	void OnTriggerEnter(Collider other){
+		if (other.tag == "Hiro") {
+			this.gameObject.SetActive (false);
+		}
 	}
 }

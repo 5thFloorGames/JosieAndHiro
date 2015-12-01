@@ -76,12 +76,12 @@ public class HiroController : MonoBehaviour {
 			//StartCoroutine("TurnOffAfterSecond");
 		}
 
-		if (transform.position.y < 0.5 && !falling) {
+		if (transform.position.y < 0.45 && !falling) {
 			falling = true;
 			PlayRandomSound(fallingSounds, 0.8f);
 		}
 
-		if (transform.position.y > 0.5 == falling) {
+		if (transform.position.y > 0.45 && falling) {
 			falling = false;
 		}
 
@@ -102,7 +102,7 @@ public class HiroController : MonoBehaviour {
 		if (!rotating && !moving) {
 			// Raycast to check for walls.
 			if (Input.GetAxis ("HiroHorizontal") < 0) {
-				if(Physics.Raycast (transform.position, transform.forward, 1.25f, wallMask)){
+				if(Physics.Raycast (transform.position + Vector3.up, transform.forward, 1.25f, wallMask)){
 					PlayBump();
 				} else {
 					setTarget(transform.position + transform.forward);
@@ -110,7 +110,7 @@ public class HiroController : MonoBehaviour {
 				}
 			}
 			if (Input.GetAxis ("HiroHorizontal") > 0) {
-				if(Physics.Raycast (transform.position, transform.forward * (-1), 1.25f, wallMask)){
+				if(Physics.Raycast (transform.position + Vector3.up, transform.forward * (-1), 1.25f, wallMask)){
 					// make this play only once
 					PlayBump();
 				} else {
