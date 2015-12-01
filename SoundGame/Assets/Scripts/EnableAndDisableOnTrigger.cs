@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnableOrDisableOnTrigger : MonoBehaviour {
+public class EnableAndDisableOnTrigger : MonoBehaviour {
 
 	public GameObject[] enablable;
 	public GameObject[] disablable;
@@ -23,7 +23,7 @@ public class EnableOrDisableOnTrigger : MonoBehaviour {
 		}
 	}
 	
-	void TurnOff(){
+	void Disable(){
 		foreach (GameObject g in disablable) {
 			g.SetActive(false);
 		}
@@ -32,6 +32,7 @@ public class EnableOrDisableOnTrigger : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Hiro" || other.tag == "Josie") {
 			Enable();
+			Disable();
 		}
 	}
 }
