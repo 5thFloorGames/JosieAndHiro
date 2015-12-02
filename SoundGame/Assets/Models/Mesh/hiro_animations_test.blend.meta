@@ -121,6 +121,7 @@ ModelImporter:
     7400006: JumpMovementForward
     7400008: TurnLeft
     7400010: TurnRight
+    7400012: PlaceholderIdle
     9500000: //RootNode
     13700000: Bunny_Back_Joint_L
     13700002: Bunny_Back_Joint_R
@@ -155,7 +156,861 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bunny_Armature
+        weight: 1
+      - path: Bunny_Armature/Pivot
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L/Foot_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R/Foot_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L/Ear_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R/Ear_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Face
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L/Foot_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R/Foot_R
+        weight: 1
+      - path: Bunny_Back_Joint_L
+        weight: 1
+      - path: Bunny_Back_Joint_R
+        weight: 1
+      - path: Bunny_Back_LowerLeg_L
+        weight: 1
+      - path: Bunny_Back_LowerLeg_R
+        weight: 1
+      - path: Bunny_Back_UpperLeg_L
+        weight: 1
+      - path: Bunny_Back_UpperLeg_R
+        weight: 1
+      - path: Bunny_Body
+        weight: 1
+      - path: Bunny_Ear_L
+        weight: 1
+      - path: Bunny_Ear_R
+        weight: 1
+      - path: Bunny_Front_LowerLeg_L
+        weight: 1
+      - path: Bunny_Front_LowerLeg_R
+        weight: 1
+      - path: Bunny_Front_UpperLeg_L
+        weight: 1
+      - path: Bunny_Front_UpperLeg_R
+        weight: 1
+      - path: Bunny_Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bunny_Armature
+        weight: 1
+      - path: Bunny_Armature/Pivot
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L/Foot_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R/Foot_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L/Ear_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R/Ear_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Face
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L/Foot_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R/Foot_R
+        weight: 1
+      - path: Bunny_Back_Joint_L
+        weight: 1
+      - path: Bunny_Back_Joint_R
+        weight: 1
+      - path: Bunny_Back_LowerLeg_L
+        weight: 1
+      - path: Bunny_Back_LowerLeg_R
+        weight: 1
+      - path: Bunny_Back_UpperLeg_L
+        weight: 1
+      - path: Bunny_Back_UpperLeg_R
+        weight: 1
+      - path: Bunny_Body
+        weight: 1
+      - path: Bunny_Ear_L
+        weight: 1
+      - path: Bunny_Ear_R
+        weight: 1
+      - path: Bunny_Front_LowerLeg_L
+        weight: 1
+      - path: Bunny_Front_LowerLeg_R
+        weight: 1
+      - path: Bunny_Front_UpperLeg_L
+        weight: 1
+      - path: Bunny_Front_UpperLeg_R
+        weight: 1
+      - path: Bunny_Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Jump
+      takeName: Jump
+      firstFrame: -3
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bunny_Armature
+        weight: 1
+      - path: Bunny_Armature/Pivot
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L/Foot_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R/Foot_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L/Ear_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R/Ear_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Face
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L/Foot_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R/Foot_R
+        weight: 1
+      - path: Bunny_Back_Joint_L
+        weight: 1
+      - path: Bunny_Back_Joint_R
+        weight: 1
+      - path: Bunny_Back_LowerLeg_L
+        weight: 1
+      - path: Bunny_Back_LowerLeg_R
+        weight: 1
+      - path: Bunny_Back_UpperLeg_L
+        weight: 1
+      - path: Bunny_Back_UpperLeg_R
+        weight: 1
+      - path: Bunny_Body
+        weight: 1
+      - path: Bunny_Ear_L
+        weight: 1
+      - path: Bunny_Ear_R
+        weight: 1
+      - path: Bunny_Front_LowerLeg_L
+        weight: 1
+      - path: Bunny_Front_LowerLeg_R
+        weight: 1
+      - path: Bunny_Front_UpperLeg_L
+        weight: 1
+      - path: Bunny_Front_UpperLeg_R
+        weight: 1
+      - path: Bunny_Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: JumpMovementForward
+      takeName: JumpMovementForward
+      firstFrame: -1
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bunny_Armature
+        weight: 1
+      - path: Bunny_Armature/Pivot
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L/Foot_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R/Foot_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L/Ear_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R/Ear_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Face
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L/Foot_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R/Foot_R
+        weight: 1
+      - path: Bunny_Back_Joint_L
+        weight: 1
+      - path: Bunny_Back_Joint_R
+        weight: 1
+      - path: Bunny_Back_LowerLeg_L
+        weight: 1
+      - path: Bunny_Back_LowerLeg_R
+        weight: 1
+      - path: Bunny_Back_UpperLeg_L
+        weight: 1
+      - path: Bunny_Back_UpperLeg_R
+        weight: 1
+      - path: Bunny_Body
+        weight: 1
+      - path: Bunny_Ear_L
+        weight: 1
+      - path: Bunny_Ear_R
+        weight: 1
+      - path: Bunny_Front_LowerLeg_L
+        weight: 1
+      - path: Bunny_Front_LowerLeg_R
+        weight: 1
+      - path: Bunny_Front_UpperLeg_L
+        weight: 1
+      - path: Bunny_Front_UpperLeg_R
+        weight: 1
+      - path: Bunny_Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TurnLeft
+      takeName: TurnLeft
+      firstFrame: -1
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bunny_Armature
+        weight: 1
+      - path: Bunny_Armature/Pivot
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L/Foot_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R/Foot_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L/Ear_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R/Ear_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Face
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L/Foot_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R/Foot_R
+        weight: 1
+      - path: Bunny_Back_Joint_L
+        weight: 1
+      - path: Bunny_Back_Joint_R
+        weight: 1
+      - path: Bunny_Back_LowerLeg_L
+        weight: 1
+      - path: Bunny_Back_LowerLeg_R
+        weight: 1
+      - path: Bunny_Back_UpperLeg_L
+        weight: 1
+      - path: Bunny_Back_UpperLeg_R
+        weight: 1
+      - path: Bunny_Body
+        weight: 1
+      - path: Bunny_Ear_L
+        weight: 1
+      - path: Bunny_Ear_R
+        weight: 1
+      - path: Bunny_Front_LowerLeg_L
+        weight: 1
+      - path: Bunny_Front_LowerLeg_R
+        weight: 1
+      - path: Bunny_Front_UpperLeg_L
+        weight: 1
+      - path: Bunny_Front_UpperLeg_R
+        weight: 1
+      - path: Bunny_Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TurnRight
+      takeName: TurnRight
+      firstFrame: -1
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bunny_Armature
+        weight: 1
+      - path: Bunny_Armature/Pivot
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L/Foot_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R/Foot_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L/Ear_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R/Ear_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Face
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L/Foot_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R/Foot_R
+        weight: 1
+      - path: Bunny_Back_Joint_L
+        weight: 1
+      - path: Bunny_Back_Joint_R
+        weight: 1
+      - path: Bunny_Back_LowerLeg_L
+        weight: 1
+      - path: Bunny_Back_LowerLeg_R
+        weight: 1
+      - path: Bunny_Back_UpperLeg_L
+        weight: 1
+      - path: Bunny_Back_UpperLeg_R
+        weight: 1
+      - path: Bunny_Body
+        weight: 1
+      - path: Bunny_Ear_L
+        weight: 1
+      - path: Bunny_Ear_R
+        weight: 1
+      - path: Bunny_Front_LowerLeg_L
+        weight: 1
+      - path: Bunny_Front_LowerLeg_R
+        weight: 1
+      - path: Bunny_Front_UpperLeg_L
+        weight: 1
+      - path: Bunny_Front_UpperLeg_R
+        weight: 1
+      - path: Bunny_Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PlaceholderIdle
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bunny_Armature
+        weight: 1
+      - path: Bunny_Armature/Pivot
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_L/Joint_L/Shin_L/Foot_Upper_L/Foot_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Back/Thigh_R/Joint_R/Shin_R/Foot_Upper_R/Foot_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/BackPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontLegIK_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/FrontPole_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_L/Ear_Upper_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Ear_Lower_R/Ear_Upper_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Face
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_L/Lower_Leg_L/Foot_L
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R
+        weight: 1
+      - path: Bunny_Armature/Pivot/Head/Upper_Leg_R/Lower_Leg_R/Foot_R
+        weight: 1
+      - path: Bunny_Back_Joint_L
+        weight: 1
+      - path: Bunny_Back_Joint_R
+        weight: 1
+      - path: Bunny_Back_LowerLeg_L
+        weight: 1
+      - path: Bunny_Back_LowerLeg_R
+        weight: 1
+      - path: Bunny_Back_UpperLeg_L
+        weight: 1
+      - path: Bunny_Back_UpperLeg_R
+        weight: 1
+      - path: Bunny_Body
+        weight: 1
+      - path: Bunny_Ear_L
+        weight: 1
+      - path: Bunny_Ear_R
+        weight: 1
+      - path: Bunny_Front_LowerLeg_L
+        weight: 1
+      - path: Bunny_Front_LowerLeg_R
+        weight: 1
+      - path: Bunny_Front_UpperLeg_L
+        weight: 1
+      - path: Bunny_Front_UpperLeg_R
+        weight: 1
+      - path: Bunny_Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -192,8 +1047,10 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -21,6 +21,7 @@ public class HiroController : MonoBehaviour {
 	private AudioClip[] fallingSounds;
 	private AudioClip spawn;
 	private AudioClip click;
+	private Animator animator;
 
 	void Awake(){
 		//lightSource = GetComponentInChildren<Light> ();
@@ -33,6 +34,7 @@ public class HiroController : MonoBehaviour {
 		fallingSounds = Resources.LoadAll<AudioClip>("Audio/Hiro/Falling");
 		spawn = Resources.Load<AudioClip>("Audio/Actions/start");
 		click = Resources.Load<AudioClip>("Audio/Actions/Click");
+		animator = GetComponent<Animator> ();
 	}
 
 	// Use this for initialization
@@ -61,11 +63,13 @@ public class HiroController : MonoBehaviour {
 	void Update () {
 		if (!rotating && !moving) {
 			if (Input.GetButtonDown ("Rotate")) {
+				animator.SetTrigger("TurnRight");
 				rotation += 90f;
 				qTo = Quaternion.Euler(0.0f, rotation, 0.0f);
 				Rotate (rotSpeed);
 				PlayRandomSound(turnRight);
 			} else if (Input.GetButtonDown ("AntiRotate")) {
+				animator.SetTrigger("TurnLeft");
 				rotation -= 90f;
 				qTo = Quaternion.Euler(0.0f, rotation, 0.0f);
 				Rotate (-rotSpeed);
@@ -106,6 +110,7 @@ public class HiroController : MonoBehaviour {
 					PlayBump();
 				} else {
 					setTarget(transform.position + transform.forward);
+					animator.SetTrigger("Jump");
 					PlayRandomSound(forwardJumps);
 				}
 			}
