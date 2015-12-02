@@ -16,13 +16,17 @@ public class DropTheFloor : MonoBehaviour {
 	[SerializeField]
 	private AudioClip floorsUp;
 	[SerializeField]
-	private AudioClip[] clips;
+	private List<AudioClip[]> clips;
 	public float moverate = 10f;
 	
 	// Use this for initialization
 	void Start () {
 		sound = gameObject.GetComponent<AudioSource> ();
 		originalPosition = transform.position;
+		clips = new List<AudioClip[]> ();
+		clips.Add(Resources.LoadAll<AudioClip>("Audio/Actions/Cat"));
+		clips.Add(Resources.LoadAll<AudioClip>("Audio/Actions/Dog"));
+		clips.Add(Resources.LoadAll<AudioClip>("Audio/Actions/Cow"));
 		StartCoroutine ("DropTheFloorManager");
 	}
 	
@@ -49,12 +53,10 @@ public class DropTheFloor : MonoBehaviour {
 	IEnumerator dropBlocksAtIndex(int index){
 		bool done = false;
 		while (!done) {
-			print ("status: " + done);
 			GameObject g = droppables [index];
 			Vector3 target = new Vector3 (g.transform.position.x, -10f, g.transform.position.z);
 			g.transform.position = Vector3.MoveTowards (g.transform.position, target, moverate * Time.deltaTime);
 			if (g.transform.position.y <= -10) {
-				print ("perillä");
 				done = true;
 			} else {
 				yield return null;
@@ -69,37 +71,43 @@ public class DropTheFloor : MonoBehaviour {
 			GameObject g = droppables [index];
 			Vector3 target = new Vector3 (g.transform.position.x, 0f, g.transform.position.z);
 			if (g.transform.position.y < 0) {
-				print ("liikutaan");
 				g.transform.position = Vector3.MoveTowards (g.transform.position, target, moverate * Time.deltaTime);
 				yield return null;
 			} else {
 				g.transform.position = new Vector3 (g.transform.position.x, 0f, g.transform.position.z);
-				print ("perillä");
 				done = true;
 			}
 		}
 	}
 
+	void PlayRandomSound(AudioClip[] clips){
+		sound.PlayOneShot (clips[Random.Range(0, clips.Length)]);
+	}
+
 	IEnumerator DropTheFloorManager() {
 		yield return new WaitForSeconds (2);
 		int dropIndex2 = Random.Range (0, maxBlocks);
+		int dropIndex = 0;
 		while (true) {
-			int dropIndex = dropIndex2;
+			if(Random.Range(0,2) == 1){
+				dropIndex = dropIndex2;
+			}
 			while(dropIndex == dropIndex2){
 				dropIndex2 = Random.Range(0,maxBlocks);
 			}
-			print("palikka1: " + dropIndex + " palikka2: " + dropIndex2);
-			sound.PlayOneShot(clips[dropIndex]);
+			PlayRandomSound(clips[dropIndex]);
 			yield return new WaitForSeconds (0.5f);
 			sound.PlayOneShot(countDown,0.2f);
-			yield return new WaitForSeconds (6);
+			yield return new WaitForSeconds (3);
+			PlayRandomSound(clips[dropIndex]);
+			yield return new WaitForSeconds (3);
 			dropAllButThis(dropIndex);
 			sound.PlayOneShot(floorsDown);
 			yield return new WaitForSeconds (3);
 			sound.PlayOneShot(floorsUp);
 			StartCoroutine(liftBlocksAtIndex(dropIndex2));
 			yield return new WaitForSeconds (3);
-			yield return new WaitForSeconds (Random.Range(1f,2f));
+			yield return new WaitForSeconds (0.5f);
 		}
 	}
 }
