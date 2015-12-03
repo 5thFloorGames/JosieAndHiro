@@ -80,8 +80,8 @@ public class DropTheFloor : MonoBehaviour {
 		}
 	}
 
-	void PlayRandomSound(AudioClip[] clips){
-		sound.PlayOneShot (clips[Random.Range(0, clips.Length)]);
+	void PlayRandomSound(AudioClip[] clips, float volume){
+		sound.PlayOneShot (clips[Random.Range(0, clips.Length)], volume);
 	}
 
 	IEnumerator DropTheFloorManager() {
@@ -95,16 +95,16 @@ public class DropTheFloor : MonoBehaviour {
 			while(dropIndex == dropIndex2){
 				dropIndex2 = Random.Range(0,maxBlocks);
 			}
-			PlayRandomSound(clips[dropIndex]);
+			PlayRandomSound(clips[dropIndex], 1f);
 			yield return new WaitForSeconds (0.5f);
 			sound.PlayOneShot(countDown,0.2f);
 			yield return new WaitForSeconds (3);
-			PlayRandomSound(clips[dropIndex]);
+			PlayRandomSound(clips[dropIndex], 1f);
 			yield return new WaitForSeconds (3);
 			dropAllButThis(dropIndex);
-			sound.PlayOneShot(floorsDown);
+			sound.PlayOneShot(floorsDown,0.1f);
 			yield return new WaitForSeconds (3);
-			sound.PlayOneShot(floorsUp);
+			sound.PlayOneShot(floorsUp, 0.1f);
 			StartCoroutine(liftBlocksAtIndex(dropIndex2));
 			yield return new WaitForSeconds (3);
 			yield return new WaitForSeconds (0.5f);
