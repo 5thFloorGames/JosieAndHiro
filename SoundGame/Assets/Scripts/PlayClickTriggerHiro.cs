@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlaySoundTriggerHiro : MonoBehaviour {
+public class PlayClickTriggerHiro : MonoBehaviour {
 
 	private AudioSource sound;
 	

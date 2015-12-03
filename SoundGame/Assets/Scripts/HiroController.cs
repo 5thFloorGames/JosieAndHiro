@@ -120,6 +120,7 @@ public class HiroController : MonoBehaviour {
 					PlayBump();
 				} else {
 					setTarget(transform.position + transform.forward * (-1));
+					animator.SetTrigger("JumpBack");
 					PlayRandomSound(backwardJumps);
 				}
 			}
