@@ -6,7 +6,7 @@ public class HiroController : MonoBehaviour {
 	private bool rotating = false;
 	private bool moving = false;
 	private bool falling = false;
-	private float rotSpeed = 125.0f;
+	private float rotSpeed = 175.0f;
 	private Vector3 target;
 	private Light lightSource;
 	private AudioSource sound;
@@ -106,7 +106,7 @@ public class HiroController : MonoBehaviour {
 		if (!rotating && !moving) {
 			// Raycast to check for walls.
 			if (Input.GetAxis ("HiroHorizontal") < 0) {
-				if(Physics.Raycast (transform.position + Vector3.up, transform.forward, 1.25f, wallMask)){
+				if(Physics.Raycast (transform.position, transform.forward, 1.25f, wallMask)){
 					PlayBump();
 				} else {
 					setTarget(transform.position + transform.forward);
@@ -115,7 +115,7 @@ public class HiroController : MonoBehaviour {
 				}
 			}
 			if (Input.GetAxis ("HiroHorizontal") > 0) {
-				if(Physics.Raycast (transform.position + Vector3.up, transform.forward * (-1), 1.25f, wallMask)){
+				if(Physics.Raycast (transform.position, transform.forward * (-1), 1.25f, wallMask)){
 					// make this play only once
 					PlayBump();
 				} else {
