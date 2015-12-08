@@ -102,9 +102,9 @@ public class DropTheFloor : MonoBehaviour {
 			PlayRandomSound(clips[dropIndex], 1f);
 			yield return new WaitForSeconds (3);
 			dropAllButThis(dropIndex);
-			sound.PlayOneShot(floorsDown,0.1f);
+			sound.PlayOneShot(floorsDown,0.2f);
 			yield return new WaitForSeconds (3);
-			sound.PlayOneShot(floorsUp, 0.1f);
+			sound.PlayOneShot(floorsUp, 0.2f);
 			StartCoroutine(liftBlocksAtIndex(dropIndex2));
 			yield return new WaitForSeconds (3);
 			yield return new WaitForSeconds (0.5f);
