@@ -1,21 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Fall : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+public class Hollow : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
-		StartCoroutine (drop ());
+		if (other.tag == "Josie") {
+			StartCoroutine (drop ());
+		}
 	}
 	
 	IEnumerator drop(){
