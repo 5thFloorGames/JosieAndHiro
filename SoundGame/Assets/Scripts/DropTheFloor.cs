@@ -67,7 +67,6 @@ public class DropTheFloor : MonoBehaviour {
 	IEnumerator liftBlocksAtIndex(int index){
 		bool done = false;
 		while (!done) {
-			print ("status: " + done);
 			GameObject g = droppables [index];
 			Vector3 target = new Vector3 (g.transform.position.x, 0f, g.transform.position.z);
 			if (g.transform.position.y < 0) {
