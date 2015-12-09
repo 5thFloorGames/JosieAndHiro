@@ -3,12 +3,12 @@ using System.Collections;
 
 public class VisibleAndLitOnTrigger : MonoBehaviour {
 
-	private Light lightSource;
+	private Light[] lightSources;
 	private bool hit = false;
+	public Player activatableBy;
 
 	void Start () {
-		GetComponent<MeshRenderer> ().enabled = false;
-		lightSource = GetComponentInChildren<Light> ();
+		lightSources = GetComponentsInChildren<Light> ();
 	}
 	
 	void Update () {
@@ -16,10 +16,22 @@ public class VisibleAndLitOnTrigger : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other){
-		if (!hit && other.tag == "Hiro") {
+		if (!hit && checkPlayer(other)) {
 			gameObject.GetComponent<AudioSource> ().loop = false;
-			lightSource.enabled = true;
+			foreach(Light lightSource in lightSources){
+				lightSource.enabled = true;
+			}
 			hit = true;
+		}
+	}
+
+	private bool checkPlayer(Collider other){
+		if (activatableBy == Player.Hiro) {
+			return other.tag == "Hiro";
+		} else if (activatableBy == Player.Josie) {
+			return other.tag == "Josie";
+		} else {
+			return (other.tag == "Hiro" || other.tag == "Josie");
 		}
 	}
 }
