@@ -18,11 +18,7 @@ public class KillCharacters : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Hiro") {
-			if(other.GetComponent<HiroController>() != null) {
-				other.GetComponent<HiroController>().reset();
-			} else {
-				other.GetComponent<HiroControllerWithHollow>().reset();
-			}
+			other.GetComponent<HiroController>().reset();
 			other.transform.position = HiroSpawn.position; 
 			other.SendMessage("SpawnSound");
 		} else if (other.tag == "Josie") {
