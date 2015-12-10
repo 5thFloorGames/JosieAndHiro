@@ -6,8 +6,9 @@ public class JosieController : MonoBehaviour {
 	public float turningSpeed = 60;
 	private AudioSource sound;
 	private AudioClip[] stepSounds;
-	public AudioClip signal;
+	public AudioClip fall;
 	private Animator animator;
+	private bool falling = false;
 
 	void Start(){
 		sound = gameObject.GetComponent<AudioSource> ();
@@ -38,8 +39,13 @@ public class JosieController : MonoBehaviour {
 			animator.SetBool ("WalkingBackwards", false);
 		}
 
-		if (Input.GetButton ("Sound")) {
-			sound.PlayOneShot(signal);
+		if (transform.position.y < 0.45 && !falling) {
+			falling = true;
+			sound.PlayOneShot(fall, 1f);
+		}
+		
+		if (transform.position.y > 0.45 && falling) {
+			falling = false;
 		}
 	}
 }
