@@ -9,16 +9,18 @@ public class DoorOpen: MonoBehaviour {
 	private bool stuck = false;
 	private AudioSource sound;
 	public DoorOpen doorFriend;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
 		sound = GetComponent<AudioSource> ();
+		animator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (opening) {
-			Vector3 target = new Vector3 (transform.position.x, -0.1f, transform.position.z);
+			Vector3 target = new Vector3 (transform.position.x, -1.1f, transform.position.z);
 			transform.position = Vector3.MoveTowards (transform.position, target, 1f * Time.deltaTime);
 			if(transform.position == target){
 				opening = false;
@@ -33,7 +35,7 @@ public class DoorOpen: MonoBehaviour {
 		}
 
 		if (closing && !opening) {
-			Vector3 target = new Vector3 (transform.position.x, 1f, transform.position.z);
+			Vector3 target = new Vector3 (transform.position.x, 0.4f, transform.position.z);
 			transform.position = Vector3.MoveTowards (transform.position, target, 1f * Time.deltaTime);
 			if(transform.position == target){
 				closing = false;
@@ -43,6 +45,9 @@ public class DoorOpen: MonoBehaviour {
 
 	public void Open(){
 		opening = true;
+		if(animator != null){
+			animator.SetTrigger("Open");
+		}
 		if (!stuck) {
 			sound.PlayOneShot (sound.clip);	
 		}
@@ -56,7 +61,10 @@ public class DoorOpen: MonoBehaviour {
 		if (!stuck) {
 			open = false;
 			closing = true;
-			sound.PlayOneShot (sound.clip);	
+			sound.PlayOneShot (sound.clip);
+			if(animator != null){
+				animator.SetTrigger("Close");
+			}
 		}
 	}	
 }

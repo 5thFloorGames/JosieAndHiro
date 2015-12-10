@@ -191,5 +191,6 @@ public class HiroController : MonoBehaviour {
 	public void reset(){
 		rotating = false;
 		moving = false;
+		onHollow = false;
 	}
 }
