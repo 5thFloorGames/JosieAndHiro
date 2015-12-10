@@ -26,10 +26,9 @@ public class JosieController : MonoBehaviour {
 		if (Input.GetAxis ("Horizontal") != 0 || Input.GetAxis ("Vertical") != 0) {
 			if(Input.GetAxis ("Vertical") > 0){
 				animator.SetBool ("Walking", true);
-			} else if (Input.GetAxis ("Vertical") > 0){
+			} else if (Input.GetAxis ("Vertical") < 0){
 				animator.SetBool ("WalkingBackwards", true);
 			}
-			animator.SetBool ("Walking", true);
 			if (!sound.isPlaying) {
 				sound.clip = stepSounds [Random.Range (0, stepSounds.Length)];
 				sound.Play ();
