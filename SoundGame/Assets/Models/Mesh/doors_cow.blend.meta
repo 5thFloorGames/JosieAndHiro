@@ -17,6 +17,7 @@ ModelImporter:
     100018: Plane_002
     100020: Plane_003
     100022: Right_Wing
+    100024: Zelezna_Stena
     400000: Armature
     400002: Cow_Head
     400004: Cube
@@ -29,14 +30,17 @@ ModelImporter:
     400018: Plane_002
     400020: Plane_003
     400022: Right_Wing
+    400024: Zelezna_Stena
     2300000: Cube
     2300002: Cube_001
     2300004: Plane_002
     2300006: Plane_003
+    2300008: Zelezna_Stena
     3300000: Cube
     3300002: Cube_001
     3300004: Plane_002
     3300006: Plane_003
+    3300008: Zelezna_Stena
     4300000: Cow_Head
     4300002: Plane
     4300004: Plane_001
@@ -44,6 +48,7 @@ ModelImporter:
     4300008: Plane_002
     4300010: Cube
     4300012: Cube_001
+    4300014: Zelezna_Stena
     7400000: Default Take
     7400002: Closed
     7400004: Opened
