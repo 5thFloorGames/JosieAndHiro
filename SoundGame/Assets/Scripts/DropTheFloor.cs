@@ -32,6 +32,7 @@ public class DropTheFloor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 	}
 
 	private void liftAllButThis(int dropIndex){
@@ -84,29 +85,40 @@ public class DropTheFloor : MonoBehaviour {
 	}
 
 	IEnumerator DropTheFloorManager() {
-		yield return new WaitForSeconds (2);
-		int dropIndex2 = Random.Range (0, maxBlocks);
 		int dropIndex = 0;
+		int dropIndex2 = 0;
+		while (dropIndex == dropIndex2) {
+			dropIndex2 = Random.Range (0, maxBlocks);
+		}
+		liftAllButThis(dropIndex);
+		sound.PlayOneShot(floorsUp, 0.2f);
+		yield return new WaitForSeconds (3);
 		while (true) {
-			if(Random.Range(0,2) == 1){
-				dropIndex = dropIndex2;
+			int random = dropIndex;
+			while (random == dropIndex) {
+				random = Random.Range (0, maxBlocks);
 			}
-			while(dropIndex == dropIndex2){
-				dropIndex2 = Random.Range(0,maxBlocks);
-			}
-			PlayRandomSound(clips[dropIndex], 1f);
+			dropIndex2 = random;
+			PlayRandomSound(clips[dropIndex2], 1f);
 			yield return new WaitForSeconds (0.5f);
 			sound.PlayOneShot(countDown,0.2f);
-			yield return new WaitForSeconds (3);
-			PlayRandomSound(clips[dropIndex], 1f);
-			yield return new WaitForSeconds (3);
-			dropAllButThis(dropIndex);
+			yield return new WaitForSeconds (4);
+			PlayRandomSound(clips[dropIndex2], 1f);
+			yield return new WaitForSeconds (4);
+			StartCoroutine(dropBlocksAtIndex(dropIndex2));
 			sound.PlayOneShot(floorsDown,0.2f);
 			yield return new WaitForSeconds (3);
+			if(Random.Range(0,2) == 0){
+				int temp = dropIndex2;
+				dropIndex2 = dropIndex;
+				dropIndex = temp;
+			}
+			liftAllButThis(dropIndex);
 			sound.PlayOneShot(floorsUp, 0.2f);
-			StartCoroutine(liftBlocksAtIndex(dropIndex2));
 			yield return new WaitForSeconds (3);
 			yield return new WaitForSeconds (0.5f);
 		}
 	}
+
+
 }

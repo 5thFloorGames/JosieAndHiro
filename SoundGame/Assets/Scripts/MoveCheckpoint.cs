@@ -4,6 +4,7 @@ using System.Collections;
 public class MoveCheckpoint : MonoBehaviour {
 
 	public GameObject movableCheckpoint;
+	public Player activatableBy;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +17,9 @@ public class MoveCheckpoint : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		movableCheckpoint.transform.position = transform.position;
+		if (other.tag == activatableBy.ToString()) {
+			movableCheckpoint.transform.position = transform.position;
+		}
 	}
 
 }
