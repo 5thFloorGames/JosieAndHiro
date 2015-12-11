@@ -36,6 +36,36 @@ ModelImporter:
     100056: Camera_System
     100058: Cube_011
     100060: Cube_013
+    100062: Cube_014
+    100064: Cube_015
+    100066: Cube_017
+    100068: Cube_018
+    100070: Cube_019
+    100072: Cube_020
+    100074: Cube_021
+    100076: Cube_022
+    100078: Cube_028
+    100080: Cylinder_001
+    100082: Cylinder_002
+    100084: Door_Hole
+    100086: FallingTile_Corner
+    100088: FallingTile_Ledge
+    100090: FallingTile_Tile
+    100092: Filler_AirConditioning
+    100094: Filler_HlafStar
+    100096: Filler_Plain
+    100098: Plane_007
+    100100: Tile_highPoly
+    100102: Tile_highPoly_001
+    100104: Tile_highPoly_003
+    100106: Tile_highPoly_005
+    100108: Tile_LowPoly
+    100110: Trigger_Cow
+    100112: Trigger_Dog
+    100114: Wall
+    100116: Wall_001
+    100118: Wall_Corner_Inner
+    100120: Wall_Corner_Outer
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -67,6 +97,36 @@ ModelImporter:
     400056: Camera_System
     400058: Cube_011
     400060: Cube_013
+    400062: Cube_014
+    400064: Cube_015
+    400066: Cube_017
+    400068: Cube_018
+    400070: Cube_019
+    400072: Cube_020
+    400074: Cube_021
+    400076: Cube_022
+    400078: Cube_028
+    400080: Cylinder_001
+    400082: Cylinder_002
+    400084: Door_Hole
+    400086: FallingTile_Corner
+    400088: FallingTile_Ledge
+    400090: FallingTile_Tile
+    400092: Filler_AirConditioning
+    400094: Filler_HlafStar
+    400096: Filler_Plain
+    400098: Plane_007
+    400100: Tile_highPoly
+    400102: Tile_highPoly_001
+    400104: Tile_highPoly_003
+    400106: Tile_highPoly_005
+    400108: Tile_LowPoly
+    400110: Trigger_Cow
+    400112: Trigger_Dog
+    400114: Wall
+    400116: Wall_001
+    400118: Wall_Corner_Inner
+    400120: Wall_Corner_Outer
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -93,6 +153,36 @@ ModelImporter:
     2300046: Camera_System
     2300048: Cube_011
     2300050: Cube_013
+    2300052: Cube_014
+    2300054: Cube_015
+    2300056: Cube_017
+    2300058: Cube_018
+    2300060: Cube_019
+    2300062: Cube_020
+    2300064: Cube_021
+    2300066: Cube_022
+    2300068: Cube_028
+    2300070: Cylinder_001
+    2300072: Cylinder_002
+    2300074: Door_Hole
+    2300076: FallingTile_Corner
+    2300078: FallingTile_Ledge
+    2300080: FallingTile_Tile
+    2300082: Filler_AirConditioning
+    2300084: Filler_HlafStar
+    2300086: Filler_Plain
+    2300088: Plane_007
+    2300090: Tile_highPoly
+    2300092: Tile_highPoly_001
+    2300094: Tile_highPoly_003
+    2300096: Tile_highPoly_005
+    2300098: Tile_LowPoly
+    2300100: Trigger_Cow
+    2300102: Trigger_Dog
+    2300104: Wall
+    2300106: Wall_001
+    2300108: Wall_Corner_Inner
+    2300110: Wall_Corner_Outer
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -119,6 +209,36 @@ ModelImporter:
     3300046: Camera_System
     3300048: Cube_011
     3300050: Cube_013
+    3300052: Cube_014
+    3300054: Cube_015
+    3300056: Cube_017
+    3300058: Cube_018
+    3300060: Cube_019
+    3300062: Cube_020
+    3300064: Cube_021
+    3300066: Cube_022
+    3300068: Cube_028
+    3300070: Cylinder_001
+    3300072: Cylinder_002
+    3300074: Door_Hole
+    3300076: FallingTile_Corner
+    3300078: FallingTile_Ledge
+    3300080: FallingTile_Tile
+    3300082: Filler_AirConditioning
+    3300084: Filler_HlafStar
+    3300086: Filler_Plain
+    3300088: Plane_007
+    3300090: Tile_highPoly
+    3300092: Tile_highPoly_001
+    3300094: Tile_highPoly_003
+    3300096: Tile_highPoly_005
+    3300098: Tile_LowPoly
+    3300100: Trigger_Cow
+    3300102: Trigger_Dog
+    3300104: Wall
+    3300106: Wall_001
+    3300108: Wall_Corner_Inner
+    3300110: Wall_Corner_Outer
     4300000: Cube_001
     4300002: Cube
     4300004: Cube_002
@@ -145,6 +265,36 @@ ModelImporter:
     4300046: Camera_System
     4300048: Cube_013
     4300050: Cube_011
+    4300052: Trigger_Cow
+    4300054: Wall_001
+    4300056: Filler_HlafStar
+    4300058: Tile_highPoly_005
+    4300060: Wall_Corner_Outer
+    4300062: Wall_Corner_Inner
+    4300064: Cube_028
+    4300066: FallingTile_Corner
+    4300068: Trigger_Dog
+    4300070: FallingTile_Ledge
+    4300072: Tile_highPoly_003
+    4300074: Tile_highPoly_001
+    4300076: FallingTile_Tile
+    4300078: Plane_007
+    4300080: Tile_LowPoly
+    4300082: Tile_highPoly
+    4300084: Filler_AirConditioning
+    4300086: Cube_021
+    4300088: Cylinder_001
+    4300090: Cube_022
+    4300092: Cube_020
+    4300094: Cube_019
+    4300096: Cylinder_002
+    4300098: Cube_018
+    4300100: Cube_017
+    4300102: Filler_Plain
+    4300104: Cube_015
+    4300106: Cube_014
+    4300108: Door_Hole
+    4300110: Wall
     7400000: Default Take
     7400002: Dog_Door_Closed
     7400004: Dog_Door_Opened
