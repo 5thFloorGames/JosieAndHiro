@@ -107,7 +107,7 @@ public class HiroController : MonoBehaviour {
 				qTo = Quaternion.Euler(0.0f, rotation, 0.0f);
 				Rotate (rotSpeed);
 				if(onHollow){
-					PlayRandomSound(creaks);
+					PlayRandomSound(creaks, 0.8f);
 				}
 				PlayRandomSound(turnRight);
 			} else if (Input.GetButtonDown ("AntiRotate")) {
@@ -116,7 +116,7 @@ public class HiroController : MonoBehaviour {
 				qTo = Quaternion.Euler(0.0f, rotation, 0.0f);
 				Rotate (-rotSpeed);
 				if(onHollow){
-					PlayRandomSound(creaks);
+					PlayRandomSound(creaks, 0.8f);
 				}
 				PlayRandomSound(turnLeft);
 			}
@@ -129,7 +129,7 @@ public class HiroController : MonoBehaviour {
 					setTarget(transform.position + transform.forward);
 					animator.SetTrigger("Jump");
 					if(onHollow){
-						PlayRandomSound(creaks);
+						PlayRandomSound(creaks, 0.8f);
 					}
 					if(endHollow){
 						PlayRandomSound(forwardHollow);
@@ -148,7 +148,7 @@ public class HiroController : MonoBehaviour {
 					setTarget(transform.position + transform.forward * (-1));
 					animator.SetTrigger("JumpBack");
 					if(onHollow){
-						PlayRandomSound(creaks);
+						PlayRandomSound(creaks, 0.8f);
 					}
 					if(endHollow){
 						PlayRandomSound(backwardHollow);

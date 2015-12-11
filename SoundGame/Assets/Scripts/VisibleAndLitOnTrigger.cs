@@ -18,6 +18,8 @@ public class VisibleAndLitOnTrigger : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (!hit && checkPlayer(other)) {
 			gameObject.GetComponent<AudioSource> ().loop = false;
+			gameObject.GetComponent<AudioSource> ().PlayOneShot(Resources.Load<AudioClip>("Audio/projectoron"));
+
 			foreach(Light lightSource in lightSources){
 				lightSource.enabled = true;
 			}

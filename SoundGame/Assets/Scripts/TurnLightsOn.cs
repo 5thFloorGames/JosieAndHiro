@@ -5,6 +5,7 @@ public class TurnLightsOn : MonoBehaviour {
 	
 	[SerializeField]
 	private Light[] lightSources;
+	private bool hit = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -17,10 +18,14 @@ public class TurnLightsOn : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other){
-		float wait = 0f;
-		foreach (Light lightSource in lightSources) {
-			StartCoroutine(TurnOn(lightSource, wait));
-			wait += 0.3f;
+		if (!hit) {
+			hit = true;
+			float wait = 0f;
+			GetComponent<AudioSource>().Play();
+			foreach (Light lightSource in lightSources) {
+				StartCoroutine (TurnOn (lightSource, wait));
+				wait += 0.3f;
+			}
 		}
 	}
 	
