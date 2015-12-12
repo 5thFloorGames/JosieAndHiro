@@ -66,6 +66,22 @@ ModelImporter:
     100116: Wall_001
     100118: Wall_Corner_Inner
     100120: Wall_Corner_Outer
+    100122: Cube_000
+    100124: Filler_AirConditioning_001
+    100126: Filler_HalfPlain
+    100128: Filler_HalfPlain_001
+    100130: Filler_HalfTileFiller
+    100132: Filler_Inner_Corner_Filler
+    100134: Filler_Outer_Corner_Filler
+    100136: Filler_Plain_001
+    100138: Filler_Plain_002
+    100140: Filler_Plain_003
+    100142: Filler_Plain_006
+    100144: Filler_Plain_007
+    100146: Wall_002
+    100148: Wall_003
+    100150: Wall_Corner_Inner_001
+    100152: Wall_Corner_Outer_001
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -127,6 +143,22 @@ ModelImporter:
     400116: Wall_001
     400118: Wall_Corner_Inner
     400120: Wall_Corner_Outer
+    400122: Cube_000
+    400124: Filler_AirConditioning_001
+    400126: Filler_HalfPlain
+    400128: Filler_HalfPlain_001
+    400130: Filler_HalfTileFiller
+    400132: Filler_Inner_Corner_Filler
+    400134: Filler_Outer_Corner_Filler
+    400136: Filler_Plain_001
+    400138: Filler_Plain_002
+    400140: Filler_Plain_003
+    400142: Filler_Plain_006
+    400144: Filler_Plain_007
+    400146: Wall_002
+    400148: Wall_003
+    400150: Wall_Corner_Inner_001
+    400152: Wall_Corner_Outer_001
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -183,6 +215,22 @@ ModelImporter:
     2300106: Wall_001
     2300108: Wall_Corner_Inner
     2300110: Wall_Corner_Outer
+    2300112: Cube_000
+    2300114: Filler_AirConditioning_001
+    2300116: Filler_HalfPlain
+    2300118: Filler_HalfPlain_001
+    2300120: Filler_HalfTileFiller
+    2300122: Filler_Inner_Corner_Filler
+    2300124: Filler_Outer_Corner_Filler
+    2300126: Filler_Plain_001
+    2300128: Filler_Plain_002
+    2300130: Filler_Plain_003
+    2300132: Filler_Plain_006
+    2300134: Filler_Plain_007
+    2300136: Wall_002
+    2300138: Wall_003
+    2300140: Wall_Corner_Inner_001
+    2300142: Wall_Corner_Outer_001
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -239,6 +287,22 @@ ModelImporter:
     3300106: Wall_001
     3300108: Wall_Corner_Inner
     3300110: Wall_Corner_Outer
+    3300112: Cube_000
+    3300114: Filler_AirConditioning_001
+    3300116: Filler_HalfPlain
+    3300118: Filler_HalfPlain_001
+    3300120: Filler_HalfTileFiller
+    3300122: Filler_Inner_Corner_Filler
+    3300124: Filler_Outer_Corner_Filler
+    3300126: Filler_Plain_001
+    3300128: Filler_Plain_002
+    3300130: Filler_Plain_003
+    3300132: Filler_Plain_006
+    3300134: Filler_Plain_007
+    3300136: Wall_002
+    3300138: Wall_003
+    3300140: Wall_Corner_Inner_001
+    3300142: Wall_Corner_Outer_001
     4300000: Cube_001
     4300002: Cube
     4300004: Cube_002
@@ -295,6 +359,22 @@ ModelImporter:
     4300106: Cube_014
     4300108: Door_Hole
     4300110: Wall
+    4300112: Wall_003
+    4300114: Filler_Plain_007
+    4300116: Filler_Plain_006
+    4300118: Wall_Corner_Outer_001
+    4300120: Filler_HalfTileFiller
+    4300122: Filler_Inner_Corner_Filler
+    4300124: Filler_Plain_003
+    4300126: Wall_002
+    4300128: Filler_HalfPlain_001
+    4300130: Filler_Plain_001
+    4300132: Filler_Outer_Corner_Filler
+    4300134: Filler_Plain_002
+    4300136: Filler_AirConditioning_001
+    4300138: Cube_000
+    4300140: Filler_HalfPlain
+    4300142: Wall_Corner_Inner_001
     7400000: Default Take
     7400002: Dog_Door_Closed
     7400004: Dog_Door_Opened
