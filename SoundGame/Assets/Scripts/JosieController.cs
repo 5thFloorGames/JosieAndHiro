@@ -4,9 +4,9 @@ using System.Collections;
 public class JosieController : MonoBehaviour {
 	public float movementSpeed = 10;
 	public float turningSpeed = 60;
-	private AudioSource sound;
+	public AudioSource sound;
+	public AudioSource fallingSound;
 	private AudioClip[] stepSounds;
-	public AudioClip fall;
 	private Animator animator;
 	private bool falling = false;
 
@@ -38,12 +38,12 @@ public class JosieController : MonoBehaviour {
 			animator.SetBool ("WalkingBackwards", false);
 		}
 
-		if (transform.position.y < 0.45 && !falling) {
+		if (transform.position.y < 0 && !falling) {
 			falling = true;
-			sound.PlayOneShot(fall, 1f);
+			fallingSound.Play();
 		}
 		
-		if (transform.position.y > 0.45 && falling) {
+		if (transform.position.y > 0 && falling) {
 			falling = false;
 		}
 	}
