@@ -44,10 +44,15 @@ public class DoorOpen: MonoBehaviour {
 	}
 
 	public void Open(){
-		opening = true;
+		StartCoroutine (Opening ());
+	}
+
+	IEnumerator Opening(){
 		if(animator != null){
 			animator.SetTrigger("Open");
 		}
+		yield return new WaitForSeconds (0.5f);
+		opening = true;
 		if (!stuck) {
 			sound.PlayOneShot (sound.clip);	
 		}
@@ -62,9 +67,14 @@ public class DoorOpen: MonoBehaviour {
 			open = false;
 			closing = true;
 			sound.PlayOneShot (sound.clip);
-			if(animator != null){
-				animator.SetTrigger("Close");
-			}
+			StartCoroutine(Closing());
 		}
 	}	
+
+	public IEnumerator Closing(){
+		yield return new WaitForSeconds (1.2f);
+		if(animator != null){
+			animator.SetTrigger("Close");
+		}
+	}
 }

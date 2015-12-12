@@ -35,7 +35,7 @@ public class ToggleDoor : MonoBehaviour {
 			yield return new WaitForSeconds(0.75f);
 			other.SendMessage ("Click");
 		} else if(activatableBy == Player.Josie || activatableBy == Player.Both) {
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(0.1f);
 			sound.PlayOneShot(sound.clip);
 		}
 		door.Open();
