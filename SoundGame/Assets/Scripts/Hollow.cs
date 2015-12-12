@@ -11,6 +11,7 @@ public class Hollow : MonoBehaviour {
 	
 	IEnumerator drop(){
 		bool done = false;
+		Vector3 original = transform.position;
 		while (!done) {
 			GameObject g = gameObject;
 			Vector3 target = new Vector3 (g.transform.position.x, -15f, g.transform.position.z);
@@ -21,5 +22,7 @@ public class Hollow : MonoBehaviour {
 				yield return null;
 			}
 		}
+		yield return new WaitForSeconds(1.5f);
+		transform.position = original;
 	}
 }
