@@ -6,6 +6,7 @@ public class TurnLightsOn : MonoBehaviour {
 	[SerializeField]
 	private Light[] lightSources;
 	private bool hit = false;
+	public Material defaultSkybox;
 	
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,8 @@ public class TurnLightsOn : MonoBehaviour {
 				StartCoroutine (TurnOn (lightSource, wait));
 				wait += 0.3f;
 			}
+			RenderSettings.skybox = defaultSkybox;
+			RenderSettings.ambientIntensity = 0.3f;
 		}
 	}
 	

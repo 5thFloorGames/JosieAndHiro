@@ -26,6 +26,8 @@ public class TurnLightsOff : MonoBehaviour {
 				StartCoroutine (TurnOff (lightSource, wait));
 				wait += 0.3f;
 			}
+			RenderSettings.skybox = null;
+			RenderSettings.ambientIntensity = 0.3f;
 		}
 	}
 
