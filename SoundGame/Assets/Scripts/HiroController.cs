@@ -120,7 +120,6 @@ public class HiroController : MonoBehaviour {
 				}
 				PlayRandomSound(turnLeft);
 			}
-			Debug.DrawRay(transform.position + transform.up, transform.forward,Color.green, 1.5f);
 
 			if (Input.GetAxis ("HiroHorizontal") < 0) {
 				bool endHollow = checkHollow(transform.position + transform.forward);
@@ -163,7 +162,8 @@ public class HiroController : MonoBehaviour {
 	
 	private bool checkHollow(Vector3 position){
 		RaycastHit hit;
-		Physics.Raycast (position, transform.up * (-1), out hit);
+		Debug.DrawRay(position + transform.up * (0.5f), transform.up * (-1),Color.green, 1.5f);
+		Physics.Raycast (position + transform.up * (0.5f), transform.up * (-1), out hit);
 		return hit.transform.tag == "Hollow";
 	}
 	
