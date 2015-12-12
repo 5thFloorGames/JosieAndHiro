@@ -22,14 +22,22 @@ public class HiroController : MonoBehaviour {
 	private AudioClip[] creaks;
 	private AudioClip[] forwardHollow;
 	private AudioClip[] backwardHollow;
+
+	[SerializeField]
+	private float basicSoundVolume = 0.4f;
+	[SerializeField]
+	private float spawnVolume = 0.5f;
+	[SerializeField]
+	private float clickVolume = 0.5f;
+	[SerializeField]
+	private float creakVolume = 0.5f;
 	
 	private AudioClip spawn;
 	private AudioClip click;
 	private Animator animator;
 	
 	private bool onHollow = false;
-	
-	
+
 	void Awake(){
 		//lightSource = GetComponentInChildren<Light> ();
 		sound = GetComponentInChildren<AudioSource> ();
@@ -54,7 +62,7 @@ public class HiroController : MonoBehaviour {
 	}
 	
 	private void PlayRandomSound(AudioClip[] clips){
-		PlayRandomSound(clips,0.4f);
+		PlayRandomSound(clips,basicSoundVolume);
 	}
 	
 	private void PlayRandomSound(AudioClip[] clips, float volume){
@@ -62,11 +70,11 @@ public class HiroController : MonoBehaviour {
 	}
 	
 	public void SpawnSound(){
-		sound.PlayOneShot (spawn, 0.5f);
+		sound.PlayOneShot (spawn, spawnVolume);
 	}
 	
 	public void Click(){
-		sound.PlayOneShot (click, 0.5f);
+		sound.PlayOneShot (click, clickVolume);
 	}
 	
 	// Update is called once per frame
@@ -107,7 +115,7 @@ public class HiroController : MonoBehaviour {
 				qTo = Quaternion.Euler(0.0f, rotation, 0.0f);
 				Rotate (rotSpeed);
 				if(onHollow){
-					PlayRandomSound(creaks, 0.4f);
+					PlayRandomSound(creaks, creakVolume);
 				}
 				PlayRandomSound(turnRight);
 			} else if (Input.GetButtonDown ("AntiRotate")) {
@@ -116,7 +124,7 @@ public class HiroController : MonoBehaviour {
 				qTo = Quaternion.Euler(0.0f, rotation, 0.0f);
 				Rotate (-rotSpeed);
 				if(onHollow){
-					PlayRandomSound(creaks, 0.4f);
+					PlayRandomSound(creaks, creakVolume);
 				}
 				PlayRandomSound(turnLeft);
 			}
@@ -129,7 +137,7 @@ public class HiroController : MonoBehaviour {
 					setTarget(transform.position + transform.forward);
 					animator.SetTrigger("Jump");
 					if(onHollow){
-						PlayRandomSound(creaks, 0.4f);
+						PlayRandomSound(creaks, creakVolume);
 					}
 					if(endHollow){
 						PlayRandomSound(forwardHollow);
@@ -148,7 +156,7 @@ public class HiroController : MonoBehaviour {
 					setTarget(transform.position + transform.forward * (-1));
 					animator.SetTrigger("JumpBack");
 					if(onHollow){
-						PlayRandomSound(creaks, 0.4f);
+						PlayRandomSound(creaks, creakVolume);
 					}
 					if(endHollow){
 						PlayRandomSound(backwardHollow);
