@@ -86,6 +86,7 @@ ModelImporter:
     100156: Filler_Plain_004
     100158: Filler_PlainSquare
     100160: Filler_QuarterTileFiller
+    100162: Weight_Sign
     400000: Cube
     400002: Cube_001
     400004: //RootNode
@@ -167,6 +168,7 @@ ModelImporter:
     400156: Filler_Plain_004
     400158: Filler_PlainSquare
     400160: Filler_QuarterTileFiller
+    400162: Weight_Sign
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -243,6 +245,7 @@ ModelImporter:
     2300146: Filler_Plain_004
     2300148: Filler_PlainSquare
     2300150: Filler_QuarterTileFiller
+    2300152: Weight_Sign
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -319,6 +322,7 @@ ModelImporter:
     3300146: Filler_Plain_004
     3300148: Filler_PlainSquare
     3300150: Filler_QuarterTileFiller
+    3300152: Weight_Sign
     4300000: Cube_001
     4300002: Cube
     4300004: Cube_002
@@ -395,6 +399,7 @@ ModelImporter:
     4300146: Filler_Outer_Corner_Filler_001
     4300148: Filler_QuarterTileFiller
     4300150: Filler_PlainSquare
+    4300152: Weight_Sign
     7400000: Default Take
     7400002: Dog_Door_Closed
     7400004: Dog_Door_Opened
