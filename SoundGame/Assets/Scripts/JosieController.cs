@@ -47,4 +47,9 @@ public class JosieController : MonoBehaviour {
 			falling = false;
 		}
 	}
+
+	public void reset(){
+		animator.SetBool ("Walking", false);
+		animator.SetBool ("WalkingBackwards", false);
+	}
 }
