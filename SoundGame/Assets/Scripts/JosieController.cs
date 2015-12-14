@@ -7,13 +7,17 @@ public class JosieController : MonoBehaviour {
 	public AudioSource sound;
 	public AudioSource fallingSound;
 	private AudioClip[] stepSounds;
+	private AudioClip respawn;
 	private Animator animator;
 	private bool falling = false;
 
 	void Start(){
 		sound = gameObject.GetComponent<AudioSource> ();
 		stepSounds = Resources.LoadAll<AudioClip>("Audio/Josie/");
+		respawn = Resources.Load<AudioClip> ("Audio/Josie_respawn");
 		animator = GetComponent<Animator> ();
+		Cursor.visible = false;
+		SpawnSound ();
 	}
 
 	void Update() {
@@ -51,5 +55,9 @@ public class JosieController : MonoBehaviour {
 	public void reset(){
 		animator.SetBool ("Walking", false);
 		animator.SetBool ("WalkingBackwards", false);
+	}
+
+	public void SpawnSound(){
+		sound.PlayOneShot (respawn, 0.3f);
 	}
 }

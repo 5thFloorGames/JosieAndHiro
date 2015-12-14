@@ -23,6 +23,7 @@ public class KillCharacters : MonoBehaviour {
 			other.SendMessage("SpawnSound");
 		} else if (other.tag == "Josie") {
 			other.transform.position = JosieSpawn.position;
+			other.SendMessage("SpawnSound");
 		}
 	}
 }
