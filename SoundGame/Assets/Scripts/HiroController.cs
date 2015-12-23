@@ -124,7 +124,7 @@ public class HiroController : MonoBehaviour {
 			}
 
 			if(!moving){
-				if (Input.GetAxis ("HiroMovementMac") < 0 || Input.GetAxis("HiroMovementPC") < -0.5) {
+				if (Input.GetAxis ("HiroMovementMac") < 0 || Input.GetAxis("HiroMovementPC") > 0.5) {
 					bool endHollow = checkHollow(transform.position + transform.forward);
 					if(Physics.Raycast (transform.position + transform.up, transform.forward, 1.25f, wallMask)){
 						PlayBump();
@@ -141,7 +141,7 @@ public class HiroController : MonoBehaviour {
 						}
 					}
 				}
-				if (Input.GetAxis ("HiroMovementMac") > 0 || Input.GetAxis("HiroMovementPC") > 0.5) {
+				if (Input.GetAxis ("HiroMovementMac") > 0 || Input.GetAxis("HiroMovementPC") < -0.5) {
 					bool endHollow = checkHollow(transform.position + transform.forward * (-1));
 					
 					if(Physics.Raycast (transform.position + transform.up, transform.forward * (-1), 1.25f, wallMask)){
