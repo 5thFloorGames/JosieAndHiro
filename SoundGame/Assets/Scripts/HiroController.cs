@@ -8,7 +8,6 @@ public class HiroController : MonoBehaviour {
 	private bool falling = false;
 	private float rotSpeed = 175.0f;
 	private Vector3 target;
-	private Light lightSource;
 	private AudioSource sound;
 	private float rotation = 0.0f;
 	private Quaternion qTo = Quaternion.identity;
@@ -79,11 +78,6 @@ public class HiroController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if (Input.GetButtonDown ("Light")) {
-			//StartCoroutine("TurnOffAfterSecond");
-		}
-		
 		if (transform.position.y < 0.45 && !falling) {
 			falling = true;
 			PlayRandomSound(fallingSounds, 0.8f);
@@ -109,7 +103,7 @@ public class HiroController : MonoBehaviour {
 		}
 		
 		if (!rotating && !moving) {
-			if (Input.GetButtonDown ("Rotate")) {
+			if (Input.GetButtonDown ("TurnRight")) {
 				animator.SetTrigger("TurnRight");
 				rotation += 90f;
 				qTo = Quaternion.Euler(0.0f, rotation, 0.0f);
@@ -118,7 +112,7 @@ public class HiroController : MonoBehaviour {
 					PlayRandomSound(creaks, creakVolume);
 				}
 				PlayRandomSound(turnRight);
-			} else if (Input.GetButtonDown ("AntiRotate")) {
+			} else if (Input.GetButtonDown ("TurnLeft")) {
 				animator.SetTrigger("TurnLeft");
 				rotation -= 90f;
 				qTo = Quaternion.Euler(0.0f, rotation, 0.0f);
@@ -129,39 +123,41 @@ public class HiroController : MonoBehaviour {
 				PlayRandomSound(turnLeft);
 			}
 
-			if (Input.GetAxis ("HiroHorizontal") < 0) {
-				bool endHollow = checkHollow(transform.position + transform.forward);
-				if(Physics.Raycast (transform.position + transform.up, transform.forward, 1.25f, wallMask)){
-					PlayBump();
-				} else {
-					setTarget(transform.position + transform.forward);
-					animator.SetTrigger("Jump");
-					if(onHollow){
-						PlayRandomSound(creaks, creakVolume);
-					}
-					if(endHollow){
-						PlayRandomSound(forwardHollow);
+			if(!moving){
+				if (Input.GetAxis ("HiroMovementMac") < 0 || Input.GetAxis("HiroMovementPC") < -0.5) {
+					bool endHollow = checkHollow(transform.position + transform.forward);
+					if(Physics.Raycast (transform.position + transform.up, transform.forward, 1.25f, wallMask)){
+						PlayBump();
 					} else {
-						PlayRandomSound(forwardJumps);
+						setTarget(transform.position + transform.forward);
+						animator.SetTrigger("Jump");
+						if(onHollow){
+							PlayRandomSound(creaks, creakVolume);
+						}
+						if(endHollow){
+							PlayRandomSound(forwardHollow);
+						} else {
+							PlayRandomSound(forwardJumps);
+						}
 					}
 				}
-			}
-			if (Input.GetAxis ("HiroHorizontal") > 0) {
-				bool endHollow = checkHollow(transform.position + transform.forward * (-1));
-				
-				if(Physics.Raycast (transform.position + transform.up, transform.forward * (-1), 1.25f, wallMask)){
-					// make this play only once
-					PlayBump();
-				} else {
-					setTarget(transform.position + transform.forward * (-1));
-					animator.SetTrigger("JumpBack");
-					if(onHollow){
-						PlayRandomSound(creaks, creakVolume);
-					}
-					if(endHollow){
-						PlayRandomSound(backwardHollow);
+				if (Input.GetAxis ("HiroMovementMac") > 0 || Input.GetAxis("HiroMovementPC") > 0.5) {
+					bool endHollow = checkHollow(transform.position + transform.forward * (-1));
+					
+					if(Physics.Raycast (transform.position + transform.up, transform.forward * (-1), 1.25f, wallMask)){
+						// make this play only once
+						PlayBump();
 					} else {
-						PlayRandomSound(backwardJumps);
+						setTarget(transform.position + transform.forward * (-1));
+						animator.SetTrigger("JumpBack");
+						if(onHollow){
+							PlayRandomSound(creaks, creakVolume);
+						}
+						if(endHollow){
+							PlayRandomSound(backwardHollow);
+						} else {
+							PlayRandomSound(backwardJumps);
+						}
 					}
 				}
 			}
@@ -180,12 +176,6 @@ public class HiroController : MonoBehaviour {
 			sound.clip = bumps[Random.Range(0,bumps.Length)];
 			sound.Play();
 		}
-	}
-	
-	IEnumerator TurnOffAfterSecond() {
-		lightSource.enabled = true;
-		yield return new WaitForSeconds(1);
-		lightSource.enabled = false;
 	}
 	
 	void Rotate(float speed) {
