@@ -22,6 +22,7 @@ public class TurnLightsOff : MonoBehaviour {
 			hit = true;
 			float wait = 0f;
 			GetComponent<AudioSource> ().Play ();
+
 			foreach (Light lightSource in lightSources) {
 				StartCoroutine (TurnOff (lightSource, wait));
 				wait += 0.3f;
@@ -33,6 +34,14 @@ public class TurnLightsOff : MonoBehaviour {
 
 	IEnumerator TurnOff(Light source, float wait){
 		yield return new WaitForSeconds (wait);
+		while (source.intensity > 0) {
+			source.intensity = source.intensity - 0.02f;
+			print (source.intensity);
+			yield return new WaitForSeconds (0.01f);
+			if (source.intensity <= 0) {
+				yield break;
+			}
+		}
 		source.enabled = false;
 	}
 }

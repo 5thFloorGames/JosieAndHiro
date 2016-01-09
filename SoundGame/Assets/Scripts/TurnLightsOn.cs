@@ -35,5 +35,13 @@ public class TurnLightsOn : MonoBehaviour {
 	IEnumerator TurnOn(Light source, float wait){
 		yield return new WaitForSeconds (wait);
 		source.enabled = true;
+		while (source.intensity < 1) {
+			source.intensity = source.intensity + 0.02f;
+			print (source.intensity);
+			yield return new WaitForSeconds (0.01f);
+			if (source.intensity >= 1) {
+				yield break;
+			}
+		}
 	}
 }
