@@ -17,7 +17,13 @@ public class PlayClickTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		StartCoroutine(ClickAndOpen(other));
+		transform.Translate(new Vector3(0f,0f,-0.1f));
 	}
+
+	void OnTriggerExit(Collider other){
+		transform.Translate(new Vector3(0f,0f,0.1f));
+	}
+		
 
 	IEnumerator ClickAndOpen(Collider other){
 		if (other.tag == "Hiro") {

@@ -7,6 +7,7 @@ public class MakeSound : MonoBehaviour {
 	private AudioClip[] moos;
 	private AudioSource sound;
 	public string animal;
+	public bool playSound = true;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +18,7 @@ public class MakeSound : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!sound.isPlaying && sound.enabled) {
+		if (!sound.isPlaying && sound.enabled && playSound) {
 			Sound ();
 		}
 	}

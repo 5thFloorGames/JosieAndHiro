@@ -24,7 +24,6 @@ public class ToggleDoor : MonoBehaviour {
 		if (checkPlayer(other) && !occupied) {
 			occupied = true;
 			StartCoroutine(ClickAndOpen(other));
-			transform.Translate(new Vector3(0f,0f,-0.1f));
 		} else if (checkPlayer(other) && occupied) {
 			doubleOccupied = true;
 			print ("double!");
