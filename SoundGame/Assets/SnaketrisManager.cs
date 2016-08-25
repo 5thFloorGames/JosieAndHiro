@@ -21,16 +21,23 @@ public class SnaketrisManager : MonoBehaviour {
 		yield return new WaitForSeconds (0.5f);
 		hiro.SendMessage ("Click");
 		soundBlock.GetComponent<MakeSound> ().playSound = false;
-		LockColors ();
-		SetBlock ();
+		availableTiles = LockColors ();
+		if (availableTiles.Count == 0) {
+			print ("YOU WIN!");
+		} else {
+			SetBlock ();
+		}
 	}
 	
-	void LockColors(){
+	List<GameObject> LockColors(){
+		List<GameObject> soundTiles = new List<GameObject> ();
 		foreach (GameObject g in allTiles) {
-			if (g.GetComponent<ColorOnTrigger> ().LockColor ()) {
-				availableTiles.Remove (g);
+			g.GetComponent<ColorOnTrigger> ().LockColor ();
+			if (!g.GetComponent<ColorOnTrigger>().green) {
+				soundTiles.Add (g);
 			}
 		}
+		return soundTiles;
 	}
 
 	void SetBlock(){

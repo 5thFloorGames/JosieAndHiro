@@ -3,8 +3,7 @@ using System.Collections;
 
 public class ColorOnTrigger : MonoBehaviour {
 
-	private bool colorLocked = false;
-	private bool failed = false;
+	public bool green = false;
 	private bool active = false;
 	[SerializeField]
 	private Player activePlayer = Player.None;
@@ -18,10 +17,10 @@ public class ColorOnTrigger : MonoBehaviour {
 		if (!active) {
 			active = true;
 			activePlayer = (Player)System.Enum.Parse (typeof(Player), col.tag);
-			if (!colorLocked) {
+			if (!green) {
 				GetComponent<Renderer> ().material.color = Color.green;
 			} else {
-				GetComponent<Renderer> ().material.color = Color.red;
+				GetComponent<Renderer> ().material.color = Color.white;
 			}
 			if (col.tag == "Hiro") {
 				manager.CheckTile (gameObject, col);
@@ -41,20 +40,19 @@ public class ColorOnTrigger : MonoBehaviour {
 		} else if (col.tag == activePlayer.ToString ()) {
 			active = false;
 			activePlayer = Player.None;
-			if (!colorLocked) {
+			if (!green) {
 				GetComponent<Renderer> ().material.color = Color.white;
-			} else if (colorLocked && !failed) {
+			} else {
 				GetComponent<Renderer> ().material.color = Color.green;
 			}
 		}
 	}
 
 	public bool LockColor(){
-		if (active && !colorLocked) {
-			colorLocked = true;
+		if (active && !green) {
+			green = true;
 			return true;
-		} else if (active && colorLocked) {
-			failed = true;
+		} else if (active && green) {
 			return false;
 		}
 		return false;
