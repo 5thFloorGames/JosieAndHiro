@@ -8,6 +8,7 @@ public class LetterByLetter : MonoBehaviour {
 	public string text;
 	private Text UIText;
 	public bool autoContinue = false;
+	private float delay = 0.05f;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +19,7 @@ public class LetterByLetter : MonoBehaviour {
 	IEnumerator TypeText(){
 		foreach(char character in text){
 			UIText.text += character;
-			yield return new WaitForSeconds (0.08f);
+			yield return new WaitForSeconds (delay);
 		}
 		if (autoContinue) {
 			for (int i = 0; i < 4; i++) {
