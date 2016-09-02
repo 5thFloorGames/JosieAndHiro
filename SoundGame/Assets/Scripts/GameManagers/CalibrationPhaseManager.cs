@@ -10,6 +10,7 @@ public class CalibrationPhaseManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		phase = 0;
+		phases [phase].SetActive (true);
 	}
 	
 	// Update is called once per frame

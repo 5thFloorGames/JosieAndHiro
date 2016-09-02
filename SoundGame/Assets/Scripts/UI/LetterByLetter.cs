@@ -31,6 +31,8 @@ public class LetterByLetter : MonoBehaviour {
 				UIText.text += ".";
 				yield return new WaitForSeconds (0.3f);
 			}
+		} else {
+			SendMessage ("Completed");
 		}
 	}
 }
