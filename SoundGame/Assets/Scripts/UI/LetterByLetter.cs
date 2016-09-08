@@ -8,7 +8,7 @@ public class LetterByLetter : MonoBehaviour {
 	public string text;
 	private Text UIText;
 	public bool autoContinue = false;
-	private float delay = 0.05f;
+	public float delay = 0.05f;
 
 	// Use this for initialization
 	void Start () {

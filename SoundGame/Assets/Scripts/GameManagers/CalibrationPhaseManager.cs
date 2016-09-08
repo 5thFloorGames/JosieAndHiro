@@ -15,7 +15,9 @@ public class CalibrationPhaseManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetKeyDown(KeyCode.P)) {
+			NextPhase ();
+		}
 	}
 
 	public void NextPhase() {
