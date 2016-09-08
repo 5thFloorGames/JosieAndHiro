@@ -29,7 +29,7 @@ public class CalibrationPhaseManager : MonoBehaviour {
 	}
 
 	IEnumerator LoadAsync() {
-		AsyncOperation async = Application.LoadLevelAsync("FinalFinalLevel");
+		AsyncOperation async = Application.LoadLevelAsync("Snaketris");
 		yield return async;
 		Debug.Log("Loading complete");
 	}

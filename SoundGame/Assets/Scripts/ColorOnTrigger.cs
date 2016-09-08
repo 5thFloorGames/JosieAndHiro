@@ -43,7 +43,7 @@ public class ColorOnTrigger : MonoBehaviour {
 			if (!green) {
 				GetComponent<Renderer> ().material.color = Color.white;
 			} else {
-				GetComponent<Renderer> ().material.color = Color.green;
+				GetComponent<Renderer> ().material.color = new Color(0f,0.5f,0f);
 			}
 		}
 	}
@@ -51,6 +51,7 @@ public class ColorOnTrigger : MonoBehaviour {
 	public bool LockColor(){
 		if (active && !green) {
 			green = true;
+			GetComponent<Renderer> ().material.color = new Color(0f,0.5f,0f);
 			return true;
 		} else if (active && green) {
 			return false;
