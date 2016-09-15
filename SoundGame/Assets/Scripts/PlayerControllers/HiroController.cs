@@ -50,7 +50,7 @@ public class HiroController : MonoBehaviour {
 		forwardHollow = Resources.LoadAll<AudioClip>("Audio/Hiro/ForwardHollow");
 		backwardHollow = Resources.LoadAll<AudioClip>("Audio/Hiro/BackwardHollow");
 		spawn = Resources.Load<AudioClip>("Audio/Actions/start");
-		click = Resources.Load<AudioClip>("Audio/Actions/Click/Click");
+		click = Resources.Load<AudioClip>("Audio/Actions/Click");
 		animator = GetComponent<Animator> ();
 	}
 	

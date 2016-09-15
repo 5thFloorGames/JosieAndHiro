@@ -14,6 +14,7 @@ public class MemoryGamePiece : MonoBehaviour {
 	private bool active = false;
 	private MemoryGameManager manager;
 	private Player activePlayer = Player.None;
+	private bool soundPlaying = false;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,14 @@ public class MemoryGamePiece : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (!sound.isPlaying && sound.enabled && soundPlaying && !locked && active) {
+			Sound ();
+		}
+	}
+
+	void Sound(){
+		sound.clip = sounds[Random.Range(0, sounds.Length)];
+		sound.Play();
 	}
 
 	void OnTriggerEnter(Collider col){
@@ -43,11 +51,24 @@ public class MemoryGamePiece : MonoBehaviour {
 					GetComponent<MeshRenderer> ().material.mainTexture = audio;
 				}
 				if (type == CardType.Audio) {
-					sound.PlayOneShot (sounds [Random.Range (0, sounds.Length)]);
+					if (col.tag == "Hiro") {
+						StartCoroutine(PlaySound (0.7f, col));
+					} else {
+						StartCoroutine(PlaySound (0f, col));
+					}
 				}
 			}
 		} else {
 			activePlayer = Player.Both;
+		}
+	}
+	IEnumerator PlaySound(float delay, Collider col){
+		yield return new WaitForSeconds (delay);
+		soundPlaying = true;
+		Sound ();
+		if (locked && col.tag == "Hiro") {
+		    yield return new WaitForSeconds (0.3f);
+			col.SendMessage ("Click");
 		}
 	}
 
@@ -65,10 +86,21 @@ public class MemoryGamePiece : MonoBehaviour {
 				manager.removePiece (this);
 				GetComponent<MeshRenderer> ().material.mainTexture = white;
 			}
+			soundPlaying = false;
 		}
 	}
 
+	IEnumerator PlayClick(){
+		yield return new WaitForSeconds (0.8f);
+		GameObject.FindGameObjectWithTag ("Hiro").SendMessage ("Click");
+	}
+		
+
 	public void Lock(){
 		locked = true;
+		if (!soundPlaying) {
+			StartCoroutine (PlayClick ());
+		}
 	}
+
 }

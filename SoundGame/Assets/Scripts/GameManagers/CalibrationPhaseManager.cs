@@ -31,7 +31,7 @@ public class CalibrationPhaseManager : MonoBehaviour {
 	}
 
 	IEnumerator LoadAsync() {
-		AsyncOperation async = Application.LoadLevelAsync("Snaketris");
+		AsyncOperation async = Application.LoadLevelAsync("TestSetup");
 		yield return async;
 		Debug.Log("Loading complete");
 	}

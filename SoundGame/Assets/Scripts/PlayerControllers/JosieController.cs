@@ -10,6 +10,7 @@ public class JosieController : MonoBehaviour {
 	private AudioClip respawn;
 	private Animator animator;
 	private bool falling = false;
+	private bool frozen = false;
 
 	void Start(){
 		sound = gameObject.GetComponent<AudioSource> ();
@@ -21,34 +22,36 @@ public class JosieController : MonoBehaviour {
 	}
 
 	void Update() {
-		float horizontal = Input.GetAxis("Horizontal") * turningSpeed * Time.deltaTime;
-		transform.Rotate(0, horizontal, 0);
+		if (!frozen) {
+			float horizontal = Input.GetAxis ("Horizontal") * turningSpeed * Time.deltaTime;
+			transform.Rotate (0, horizontal, 0);
 		
-		float vertical = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
-		transform.Translate(0, 0, vertical);
+			float vertical = Input.GetAxis ("Vertical") * movementSpeed * Time.deltaTime;
+			transform.Translate (0, 0, vertical);
 
-		if (Input.GetAxis ("Vertical") != 0) {
-			if(Input.GetAxis ("Vertical") > 0){
-				animator.SetBool ("Walking", true);
-			} else if (Input.GetAxis ("Vertical") < 0){
-				animator.SetBool ("WalkingBackwards", true);
+			if (Input.GetAxis ("Vertical") != 0) {
+				if (Input.GetAxis ("Vertical") > 0) {
+					animator.SetBool ("Walking", true);
+				} else if (Input.GetAxis ("Vertical") < 0) {
+					animator.SetBool ("WalkingBackwards", true);
+				}
+				if (!sound.isPlaying) {
+					sound.clip = stepSounds [Random.Range (0, stepSounds.Length)];
+					sound.Play ();
+				}
+			} else {
+				animator.SetBool ("Walking", false);
+				animator.SetBool ("WalkingBackwards", false);
 			}
-			if (!sound.isPlaying) {
-				sound.clip = stepSounds [Random.Range (0, stepSounds.Length)];
-				sound.Play ();
-			}
-		} else {
-			animator.SetBool ("Walking", false);
-			animator.SetBool ("WalkingBackwards", false);
-		}
 
-		if (transform.position.y < 0 && !falling) {
-			falling = true;
-			fallingSound.Play();
-		}
+			if (transform.position.y < 0 && !falling) {
+				falling = true;
+				fallingSound.Play ();
+			}
 		
-		if (transform.position.y > 0 && falling) {
-			falling = false;
+			if (transform.position.y > 0 && falling) {
+				falling = false;
+			}
 		}
 	}
 
@@ -59,5 +62,14 @@ public class JosieController : MonoBehaviour {
 
 	public void SpawnSound(){
 		sound.PlayOneShot (respawn, 0.3f);
+	}
+
+	void Freeze(){
+		frozen = true;
+		reset();
+	}
+
+	void Unfreeze(){
+		frozen = false;
 	}
 }
