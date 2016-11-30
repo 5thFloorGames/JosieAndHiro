@@ -3,11 +3,11 @@ using System.Collections;
 
 public class MoveWhenSound : MonoBehaviour {
 
-	private NavMeshAgent agent;
+	private UnityEngine.AI.NavMeshAgent agent;
 
 	// Use this for initialization
 	void Start () {
-		agent = gameObject.GetComponent<NavMeshAgent> ();
+		agent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent> ();
 	}
 	
 	// Update is called once per frame
